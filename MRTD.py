@@ -34,3 +34,13 @@ def calculate_check_digit(data: str) -> int:
         sum2 = (sum2 + sum1) % 255
     checksum = (sum2 << 8) | sum1
     return checksum % 10
+
+
+def scan_mrz():
+    """Stub: simulate scanning a passport MRZ. Hardware scanner not available."""
+    return ("", "")
+
+
+def query_database():
+    """Stub: simulate querying a travel document database."""
+    return None
