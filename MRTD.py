@@ -186,3 +186,53 @@ def encode_mrz(fields: dict) -> tuple:
     line2 = line2_partial + str(cd_overall)
 
     return (line1, line2)
+
+
+def validate_mrz(line1: str, line2: str) -> dict:
+    """Validate all check digits in a two-line MRZ using Fletcher-16.
+
+    Checks passport_number, birth_date, expiration_date, personal_number,
+    and overall check digits. Returns a dict with overall pass/fail and
+    per-field results. Validates ALL fields (does not stop at first mismatch).
+    """
+    # Define fields to validate: (field_name, data_slice, check_digit_position)
+    checks = [
+        ("passport_number", line2[0:9], line2[9]),
+        ("birth_date", line2[13:19], line2[19]),
+        ("expiration_date", line2[21:27], line2[27]),
+        ("personal_number", line2[28:42], line2[42]),
+    ]
+
+    fields = []
+    all_match = True
+
+    for field_name, data, stored_digit in checks:
+        expected = str(calculate_check_digit(data))
+        match = expected == stored_digit
+        if not match:
+            all_match = False
+        fields.append({
+            "field_name": field_name,
+            "expected": expected,
+            "actual": stored_digit,
+            "match": match,
+        })
+
+    # Overall check digit: positions 1-10, 14-20, 22-43 (1-indexed)
+    overall_data = line2[0:10] + line2[13:20] + line2[21:43]
+    overall_expected = str(calculate_check_digit(overall_data))
+    overall_stored = line2[43]
+    overall_match = overall_expected == overall_stored
+    if not overall_match:
+        all_match = False
+    fields.append({
+        "field_name": "overall",
+        "expected": overall_expected,
+        "actual": overall_stored,
+        "match": overall_match,
+    })
+
+    return {
+        "overall_result": all_match,
+        "fields": fields,
+    }
