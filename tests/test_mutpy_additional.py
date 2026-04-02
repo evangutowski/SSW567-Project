@@ -21,7 +21,10 @@ class TestMutPyAdditional(unittest.TestCase):
     def test_kill_char_to_value_error_message(self):
         with self.assertRaises(ValueError) as ctx:
             _char_to_value('!')
-        self.assertIn("Invalid MRZ character", str(ctx.exception))
+        msg = str(ctx.exception)
+        self.assertIn("Invalid MRZ character", msg)
+        # Verify the message ends with the character, not with extra text
+        self.assertTrue(msg.endswith("'!'"), f"Unexpected message ending: {msg}")
 
     # Kills #66-67: decode_mrz line1 label in error message
     def test_kill_decode_line1_label_in_error(self):
@@ -57,7 +60,9 @@ class TestMutPyAdditional(unittest.TestCase):
         fields = {"document_type": "P", "issuing_country": "UTO"}
         with self.assertRaises(ValueError) as ctx:
             encode_mrz(fields)
-        self.assertIn("Required field", str(ctx.exception))
+        msg = str(ctx.exception)
+        self.assertIn("Required field", msg)
+        self.assertIn("missing or empty", msg)
 
     # Kills #208-209: encode_mrz document_type length error message
     def test_kill_encode_doctype_error_message(self):
@@ -218,18 +223,9 @@ class TestMutPyAdditional(unittest.TestCase):
 
     # Kills #58: % 255 changed to % 256 — diverges for large intermediate sums
     def test_kill_fletcher16_mod255_vs_mod256(self):
-        # Use a string where sum1 exceeds 255 between iterations
-        # "ZZZZZZZZ" — Z=35, after 8 chars: sum1 wraps around 255
-        # Original: sum1 = (sum1+35)%255 at each step
-        # Mutant: sum1 = (sum1+35)%256
-        # After enough iterations these diverge
-        result = calculate_check_digit("ZZZZZZZZ")
-        # Pre-computed with correct % 255:
-        # sum1: 35,70,105,140,175,210,245,25 (wraps at 280%255=25)
-        # sum2: 35,105,210,95(350%255),15(270%255),225(240? let me just trust the impl)
-        # Just verify the exact expected value
-        expected = calculate_check_digit("ZZZZZZZZ")
-        self.assertEqual(result, expected)
+        # "ZZZZZZZZ" produces different results with %255 vs %256
+        # %255 returns 5, %256 returns 0 — hard-coded expected value
+        self.assertEqual(calculate_check_digit("ZZZZZZZZ"), 5)
 
     # --- Category G: Slice boundary mutations ---
 

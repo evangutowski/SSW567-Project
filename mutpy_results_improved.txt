@@ -2,12 +2,12 @@
    - targets: MRTD
    - tests: tests.test_calculate_check_digit, tests.test_scan_mrz, tests.test_query_database, tests.test_decode_mrz, tests.test_encode_mrz, tests.test_validate_mrz, tests.test_round_trip, tests.test_mutpy_additional
 [*] 83 tests passed:
-   - tests.test_calculate_check_digit [0.00023 s]
-   - tests.test_scan_mrz [0.00020 s]
+   - tests.test_calculate_check_digit [0.00028 s]
+   - tests.test_scan_mrz [0.00021 s]
    - tests.test_query_database [0.00023 s]
    - tests.test_decode_mrz [0.00026 s]
    - tests.test_encode_mrz [0.00031 s]
-   - tests.test_validate_mrz [0.00035 s]
+   - tests.test_validate_mrz [0.00036 s]
    - tests.test_round_trip [0.00020 s]
    - tests.test_mutpy_additional [0.00054 s]
 [*] Start mutants generation and execution:
@@ -24,7 +24,7 @@
    19:     else:
    20:         raise ValueError(f'Invalid MRZ character: {c}')
 --------------------------------------------------------------------------------
-[0.00861 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00839 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#   2] AOR MRTD: 
 --------------------------------------------------------------------------------
    12:     """
@@ -38,7 +38,7 @@
    19:     else:
    20:         raise ValueError(f'Invalid MRZ character: {c}')
 --------------------------------------------------------------------------------
-[0.00780 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00846 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#   3] AOR MRTD: 
 --------------------------------------------------------------------------------
    31:     '''
@@ -52,7 +52,7 @@
    38:     return checksum % 10
    39: 
 --------------------------------------------------------------------------------
-[0.00740 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00748 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#   4] AOR MRTD: 
 --------------------------------------------------------------------------------
    31:     '''
@@ -66,7 +66,7 @@
    38:     return checksum % 10
    39: 
 --------------------------------------------------------------------------------
-[0.00777 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00793 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#   5] AOR MRTD: 
 --------------------------------------------------------------------------------
    32:     (sum1, sum2) = (0, 0)
@@ -80,7 +80,7 @@
    39: 
    40: 
 --------------------------------------------------------------------------------
-[0.00771 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00801 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#   6] AOR MRTD: 
 --------------------------------------------------------------------------------
    32:     (sum1, sum2) = (0, 0)
@@ -94,7 +94,7 @@
    39: 
    40: 
 --------------------------------------------------------------------------------
-[0.00778 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00866 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#   7] AOR MRTD: 
 --------------------------------------------------------------------------------
    34:         value = _char_to_value(c)
@@ -108,7 +108,7 @@
    41: def scan_mrz():
    42:     '''Stub: simulate scanning a passport MRZ. Hardware scanner not available.'''
 --------------------------------------------------------------------------------
-[0.00805 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00839 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#   8] AOR MRTD: 
 --------------------------------------------------------------------------------
   157:         raise ValueError('expiration_date must be exactly 6 characters')
@@ -122,7 +122,7 @@
   164:     
   165:     
 --------------------------------------------------------------------------------
-[5.00636 s] timeout
+[5.00603 s] timeout
    - [#   9] AOR MRTD: 
 --------------------------------------------------------------------------------
   157:         raise ValueError('expiration_date must be exactly 6 characters')
@@ -136,7 +136,7 @@
   164:     
   165:     
 --------------------------------------------------------------------------------
-[5.00843 s] timeout
+[5.00702 s] timeout
    - [#  10] AOR MRTD: 
 --------------------------------------------------------------------------------
   159:     
@@ -150,7 +150,7 @@
   166:     personal_number_padded = personal_number[:14].ljust(14, '<')
   167:     
 --------------------------------------------------------------------------------
-[5.00836 s] timeout
+[5.00942 s] timeout
    - [#  11] AOR MRTD: 
 --------------------------------------------------------------------------------
   159:     
@@ -164,7 +164,7 @@
   166:     personal_number_padded = personal_number[:14].ljust(14, '<')
   167:     
 --------------------------------------------------------------------------------
-[5.00828 s] timeout
+[5.00760 s] timeout
    - [#  12] AOR MRTD: 
 --------------------------------------------------------------------------------
   174:     line2_partial = \
@@ -178,7 +178,7 @@
   181:     
   182:     
 --------------------------------------------------------------------------------
-[5.00625 s] timeout
+[5.00884 s] timeout
    - [#  13] AOR MRTD: 
 --------------------------------------------------------------------------------
   174:     line2_partial = \
@@ -192,7 +192,7 @@
   181:     
   182:     
 --------------------------------------------------------------------------------
-[5.00806 s] timeout
+[5.00776 s] timeout
    - [#  14] AOR MRTD: 
 --------------------------------------------------------------------------------
   174:     line2_partial = \
@@ -206,7 +206,7 @@
   181:     
   182:     
 --------------------------------------------------------------------------------
-[5.00766 s] timeout
+[5.00795 s] timeout
    - [#  15] AOR MRTD: 
 --------------------------------------------------------------------------------
   174:     line2_partial = \
@@ -220,7 +220,7 @@
   181:     
   182:     
 --------------------------------------------------------------------------------
-[5.00752 s] timeout
+[5.00599 s] timeout
    - [#  16] AOR MRTD: 
 --------------------------------------------------------------------------------
   174:     line2_partial = \
@@ -234,7 +234,7 @@
   181:     
   182:     
 --------------------------------------------------------------------------------
-[5.00798 s] timeout
+[5.00695 s] timeout
    - [#  17] AOR MRTD: 
 --------------------------------------------------------------------------------
   174:     line2_partial = \
@@ -248,7 +248,7 @@
   181:     
   182:     
 --------------------------------------------------------------------------------
-[5.00982 s] timeout
+[5.00771 s] timeout
    - [#  18] AOR MRTD: 
 --------------------------------------------------------------------------------
   174:     line2_partial = \
@@ -262,7 +262,7 @@
   181:     
   182:     
 --------------------------------------------------------------------------------
-[5.00836 s] timeout
+[5.00897 s] timeout
    - [#  19] AOR MRTD: 
 --------------------------------------------------------------------------------
   174:     line2_partial = \
@@ -276,7 +276,7 @@
   181:     
   182:     
 --------------------------------------------------------------------------------
-[5.00957 s] timeout
+[5.00762 s] timeout
    - [#  20] AOR MRTD: 
 --------------------------------------------------------------------------------
   174:     line2_partial = \
@@ -290,7 +290,7 @@
   181:     
   182:     
 --------------------------------------------------------------------------------
-[5.00940 s] timeout
+[5.00929 s] timeout
    - [#  21] AOR MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -304,7 +304,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[5.00862 s] timeout
+[5.00667 s] timeout
    - [#  22] AOR MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -318,7 +318,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[5.00776 s] timeout
+[5.00809 s] timeout
    - [#  23] AOR MRTD: 
 --------------------------------------------------------------------------------
   182:     
@@ -332,7 +332,7 @@
   189: 
   190: 
 --------------------------------------------------------------------------------
-[5.00855 s] timeout
+[5.00649 s] timeout
    - [#  24] AOR MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -346,7 +346,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[5.00785 s] timeout
+[5.00600 s] timeout
    - [#  25] AOR MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -360,7 +360,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[5.00917 s] timeout
+[5.00628 s] timeout
    - [#  26] COD MRTD: 
 --------------------------------------------------------------------------------
    61:         if len(line) != 44:
@@ -374,7 +374,7 @@
    68:     
    69:     
 --------------------------------------------------------------------------------
-[0.01445 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00951 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  27] COD MRTD: 
 --------------------------------------------------------------------------------
   124:     Raises ValueError if required fields are missing or fixed-length fields are wrong.
@@ -388,7 +388,7 @@
   131:     
   132:     document_type = fields['document_type'].upper()
 --------------------------------------------------------------------------------
-[0.01266 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00931 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  28] COD MRTD: 
 --------------------------------------------------------------------------------
   124:     Raises ValueError if required fields are missing or fixed-length fields are wrong.
@@ -402,7 +402,7 @@
   131:     
   132:     document_type = fields['document_type'].upper()
 --------------------------------------------------------------------------------
-[0.01079 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00874 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  29] COD MRTD: 
 --------------------------------------------------------------------------------
   208:     
@@ -416,7 +416,7 @@
   215:             'field_name': field_name, \
   216:             'expected': expected, \
 --------------------------------------------------------------------------------
-[0.01078 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.00998 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [#  30] COD MRTD: 
 --------------------------------------------------------------------------------
   222:     overall_data = (line2[0:10] + line2[13:20]) + line2[21:43]
@@ -430,7 +430,7 @@
   229:         'field_name': 'overall', \
   230:         'expected': overall_expected, \
 --------------------------------------------------------------------------------
-[0.01010 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.00975 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [#  31] COI MRTD: 
 --------------------------------------------------------------------------------
     9: def _char_to_value(c):
@@ -444,7 +444,7 @@
    16:         return (ord(c) - ord('A')) + 10
    17:     elif c == '<':
 --------------------------------------------------------------------------------
-[0.00940 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00863 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  32] COI MRTD: 
 --------------------------------------------------------------------------------
    11:     Digits 0-9 -> 0-9, letters A-Z -> 10-35, '<' -> 0.
@@ -458,7 +458,7 @@
    18:         return 0
    19:     else:
 --------------------------------------------------------------------------------
-[0.00797 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00800 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  33] COI MRTD: 
 --------------------------------------------------------------------------------
    13:     if c.isdigit():
@@ -472,7 +472,7 @@
    20:         raise ValueError(f'Invalid MRZ character: {c}')
    21: 
 --------------------------------------------------------------------------------
-[0.00924 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00838 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  34] COI MRTD: 
 --------------------------------------------------------------------------------
    57:     Validates input length and character set. Raises ValueError on invalid input.
@@ -486,7 +486,7 @@
    64:         
    65:         if not (_MRZ_PATTERN.match(line)):
 --------------------------------------------------------------------------------
-[0.01201 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00910 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  35] COI MRTD: 
 --------------------------------------------------------------------------------
    61:         if len(line) != 44:
@@ -500,7 +500,7 @@
    68:     
    69:     
 --------------------------------------------------------------------------------
-[0.00964 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00875 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  36] COI MRTD: 
 --------------------------------------------------------------------------------
   124:     Raises ValueError if required fields are missing or fixed-length fields are wrong.
@@ -514,7 +514,7 @@
   131:     
   132:     document_type = fields['document_type'].upper()
 --------------------------------------------------------------------------------
-[0.01052 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00950 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  37] COI MRTD: 
 --------------------------------------------------------------------------------
   140:     expiration_date = fields['expiration_date']
@@ -528,7 +528,7 @@
   147:         raise ValueError('issuing_country must be exactly 3 characters')
   148:     if len(passport_number) != 9:
 --------------------------------------------------------------------------------
-[0.01010 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00920 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  38] COI MRTD: 
 --------------------------------------------------------------------------------
   142:     
@@ -542,7 +542,7 @@
   149:         raise ValueError('passport_number must be exactly 9 characters')
   150:     if len(country_code) != 3:
 --------------------------------------------------------------------------------
-[0.00978 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00945 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  39] COI MRTD: 
 --------------------------------------------------------------------------------
   144:     if (len(document_type) < 1 or len(document_type) > 2):
@@ -556,7 +556,7 @@
   151:         raise ValueError('country_code must be exactly 3 characters')
   152:     if len(birth_date) != 6:
 --------------------------------------------------------------------------------
-[0.00965 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00936 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  40] COI MRTD: 
 --------------------------------------------------------------------------------
   146:     if len(issuing_country) != 3:
@@ -570,7 +570,7 @@
   153:         raise ValueError('birth_date must be exactly 6 characters')
   154:     if len(sex) != 1:
 --------------------------------------------------------------------------------
-[0.01036 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01119 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  41] COI MRTD: 
 --------------------------------------------------------------------------------
   148:     if len(passport_number) != 9:
@@ -584,7 +584,7 @@
   155:         raise ValueError('sex must be exactly 1 character')
   156:     if len(expiration_date) != 6:
 --------------------------------------------------------------------------------
-[0.00954 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01074 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  42] COI MRTD: 
 --------------------------------------------------------------------------------
   150:     if len(country_code) != 3:
@@ -598,7 +598,7 @@
   157:         raise ValueError('expiration_date must be exactly 6 characters')
   158:     
 --------------------------------------------------------------------------------
-[0.00912 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00975 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  43] COI MRTD: 
 --------------------------------------------------------------------------------
   152:     if len(birth_date) != 6:
@@ -612,7 +612,7 @@
   159:     
   160:     doc_type_padded = document_type.ljust(2, '<')
 --------------------------------------------------------------------------------
-[0.00975 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01137 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [#  44] COI MRTD: 
 --------------------------------------------------------------------------------
   208:     
@@ -626,7 +626,7 @@
   215:             'field_name': field_name, \
   216:             'expected': expected, \
 --------------------------------------------------------------------------------
-[0.01041 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01239 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [#  45] COI MRTD: 
 --------------------------------------------------------------------------------
   222:     overall_data = (line2[0:10] + line2[13:20]) + line2[21:43]
@@ -640,7 +640,7 @@
   229:         'field_name': 'overall', \
   230:         'expected': overall_expected, \
 --------------------------------------------------------------------------------
-[0.01015 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01303 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [#  46] CRP MRTD: 
 --------------------------------------------------------------------------------
    12:     """
@@ -654,7 +654,7 @@
    19:     else:
    20:         raise ValueError(f'Invalid MRZ character: {c}')
 --------------------------------------------------------------------------------
-[5.00713 s] timeout
+[5.00780 s] timeout
    - [#  47] CRP MRTD: 
 --------------------------------------------------------------------------------
    12:     """
@@ -668,7 +668,7 @@
    19:     else:
    20:         raise ValueError(f'Invalid MRZ character: {c}')
 --------------------------------------------------------------------------------
-[5.00745 s] timeout
+[5.00770 s] timeout
    - [#  48] CRP MRTD: 
 --------------------------------------------------------------------------------
    12:     """
@@ -682,7 +682,7 @@
    19:     else:
    20:         raise ValueError(f'Invalid MRZ character: {c}')
 --------------------------------------------------------------------------------
-[0.00921 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.01132 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  49] CRP MRTD: 
 --------------------------------------------------------------------------------
    13:     if c.isdigit():
@@ -696,7 +696,7 @@
    20:         raise ValueError(f'Invalid MRZ character: {c}')
    21: 
 --------------------------------------------------------------------------------
-[0.00867 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00823 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  50] CRP MRTD: 
 --------------------------------------------------------------------------------
    13:     if c.isdigit():
@@ -710,7 +710,7 @@
    20:         raise ValueError(f'Invalid MRZ character: {c}')
    21: 
 --------------------------------------------------------------------------------
-[0.00835 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00836 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  51] CRP MRTD: 
 --------------------------------------------------------------------------------
    14:         return int(c)
@@ -724,7 +724,7 @@
    21: 
    22: 
 --------------------------------------------------------------------------------
-[0.00812 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00781 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  52] CRP MRTD: 
 --------------------------------------------------------------------------------
    16:         return (ord(c) - ord('A')) + 10
@@ -738,7 +738,7 @@
    23: def calculate_check_digit(data: str) -> int:
    24:     '''Calculate a check digit using the Fletcher-16 algorithm.
 --------------------------------------------------------------------------------
-[0.01034 s] killed by test_kill_char_to_value_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01046 s] killed by test_kill_char_to_value_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  53] CRP MRTD: 
 --------------------------------------------------------------------------------
    16:         return (ord(c) - ord('A')) + 10
@@ -752,7 +752,7 @@
    23: def calculate_check_digit(data: str) -> int:
    24:     '''Calculate a check digit using the Fletcher-16 algorithm.
 --------------------------------------------------------------------------------
-[0.01040 s] killed by test_kill_char_to_value_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01005 s] killed by test_kill_char_to_value_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  54] CRP MRTD: 
 --------------------------------------------------------------------------------
    16:         return (ord(c) - ord('A')) + 10
@@ -766,12 +766,12 @@
    23: def calculate_check_digit(data: str) -> int:
    24:     '''Calculate a check digit using the Fletcher-16 algorithm.
 --------------------------------------------------------------------------------
-[0.01062 s] survived
+[0.01021 s] killed by test_kill_char_to_value_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  55] CRP MRTD: 
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-[0.01050 s] survived
+[0.01084 s] killed by test_kill_char_to_value_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  56] CRP MRTD: 
 --------------------------------------------------------------------------------
    28:         sum2 = (sum2 + sum1) mod 255
@@ -785,7 +785,7 @@
    35:         sum1 = (sum1 + value) % 255
    36:         sum2 = (sum2 + sum1) % 255
 --------------------------------------------------------------------------------
-[0.00855 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00833 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  57] CRP MRTD: 
 --------------------------------------------------------------------------------
    28:         sum2 = (sum2 + sum1) mod 255
@@ -799,7 +799,7 @@
    35:         sum1 = (sum1 + value) % 255
    36:         sum2 = (sum2 + sum1) % 255
 --------------------------------------------------------------------------------
-[0.00827 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00848 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  58] CRP MRTD: 
 --------------------------------------------------------------------------------
    31:     '''
@@ -813,7 +813,7 @@
    38:     return checksum % 10
    39: 
 --------------------------------------------------------------------------------
-[0.01110 s] survived
+[0.01097 s] killed by test_kill_fletcher16_mod255_vs_mod256 (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  59] CRP MRTD: 
 --------------------------------------------------------------------------------
    32:     (sum1, sum2) = (0, 0)
@@ -827,7 +827,7 @@
    39: 
    40: 
 --------------------------------------------------------------------------------
-[0.00840 s] killed by test_passport_number_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00858 s] killed by test_passport_number_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  60] CRP MRTD: 
 --------------------------------------------------------------------------------
    33:     for c in data:
@@ -841,7 +841,7 @@
    40: 
    41: def scan_mrz():
 --------------------------------------------------------------------------------
-[0.00843 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00853 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  61] CRP MRTD: 
 --------------------------------------------------------------------------------
    34:         value = _char_to_value(c)
@@ -855,7 +855,7 @@
    41: def scan_mrz():
    42:     '''Stub: simulate scanning a passport MRZ. Hardware scanner not available.'''
 --------------------------------------------------------------------------------
-[0.00853 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00838 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [#  62] CRP MRTD: 
 --------------------------------------------------------------------------------
    39: 
@@ -869,7 +869,7 @@
    46: def query_database():
    47:     '''Stub: simulate querying a travel document database.'''
 --------------------------------------------------------------------------------
-[0.01218 s] killed by test_kill_scan_mrz_exact_return (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01196 s] killed by test_kill_scan_mrz_exact_return (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  63] CRP MRTD: 
 --------------------------------------------------------------------------------
    39: 
@@ -883,7 +883,7 @@
    46: def query_database():
    47:     '''Stub: simulate querying a travel document database.'''
 --------------------------------------------------------------------------------
-[0.01415 s] killed by test_kill_scan_mrz_exact_return (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01143 s] killed by test_kill_scan_mrz_exact_return (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  64] CRP MRTD: 
 --------------------------------------------------------------------------------
    47:     '''Stub: simulate querying a travel document database.'''
@@ -897,7 +897,7 @@
    54: def decode_mrz(line1: str, line2: str) -> dict:
    55:     '''Decode two 44-character MRZ strings into a dictionary of fields.
 --------------------------------------------------------------------------------
-[0.01148 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00905 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  65] CRP MRTD: 
 --------------------------------------------------------------------------------
    47:     '''Stub: simulate querying a travel document database.'''
@@ -911,7 +911,7 @@
    54: def decode_mrz(line1: str, line2: str) -> dict:
    55:     '''Decode two 44-character MRZ strings into a dictionary of fields.
 --------------------------------------------------------------------------------
-[0.01172 s] killed by test_decode_invalid_chars_lowercase (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00935 s] killed by test_decode_invalid_chars_lowercase (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  66] CRP MRTD: 
 --------------------------------------------------------------------------------
    56: 
@@ -925,7 +925,7 @@
    63:                 f'{name} must be exactly 44 characters, got {len(line)}')
    64:         
 --------------------------------------------------------------------------------
-[0.01141 s] killed by test_kill_decode_line1_label_in_error (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01086 s] killed by test_kill_decode_line1_label_in_error (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  67] CRP MRTD: 
 --------------------------------------------------------------------------------
    56: 
@@ -939,7 +939,7 @@
    63:                 f'{name} must be exactly 44 characters, got {len(line)}')
    64:         
 --------------------------------------------------------------------------------
-[0.01123 s] killed by test_kill_decode_line1_label_in_error (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01007 s] killed by test_kill_decode_line1_label_in_error (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  68] CRP MRTD: 
 --------------------------------------------------------------------------------
    56: 
@@ -953,7 +953,7 @@
    63:                 f'{name} must be exactly 44 characters, got {len(line)}')
    64:         
 --------------------------------------------------------------------------------
-[0.01072 s] killed by test_kill_decode_line2_label_in_error (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01099 s] killed by test_kill_decode_line2_label_in_error (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  69] CRP MRTD: 
 --------------------------------------------------------------------------------
    56: 
@@ -967,7 +967,7 @@
    63:                 f'{name} must be exactly 44 characters, got {len(line)}')
    64:         
 --------------------------------------------------------------------------------
-[0.01147 s] killed by test_kill_decode_line2_label_in_error (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01006 s] killed by test_kill_decode_line2_label_in_error (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  70] CRP MRTD: 
 --------------------------------------------------------------------------------
    57:     Validates input length and character set. Raises ValueError on invalid input.
@@ -981,7 +981,7 @@
    64:         
    65:         if not (_MRZ_PATTERN.match(line)):
 --------------------------------------------------------------------------------
-[0.01009 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00908 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  71] CRP MRTD: 
 --------------------------------------------------------------------------------
    59:     
@@ -995,7 +995,7 @@
    66:             raise ValueError(
    67:                 f'{name} contains invalid characters (only A-Z, 0-9, \'<\' allowed)')
 --------------------------------------------------------------------------------
-[0.01193 s] killed by test_kill_decode_length_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01106 s] killed by test_kill_decode_length_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  72] CRP MRTD: 
 --------------------------------------------------------------------------------
    59:     
@@ -1009,7 +1009,7 @@
    66:             raise ValueError(
    67:                 f'{name} contains invalid characters (only A-Z, 0-9, \'<\' allowed)')
 --------------------------------------------------------------------------------
-[0.01105 s] killed by test_kill_decode_length_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01089 s] killed by test_kill_decode_length_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  73] CRP MRTD: 
 --------------------------------------------------------------------------------
    63:                 f'{name} must be exactly 44 characters, got {len(line)}')
@@ -1023,7 +1023,7 @@
    70:     
    71:     document_type = line1[0:2].rstrip('<')
 --------------------------------------------------------------------------------
-[0.01058 s] killed by test_kill_decode_invalid_chars_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01075 s] killed by test_kill_decode_invalid_chars_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  74] CRP MRTD: 
 --------------------------------------------------------------------------------
    63:                 f'{name} must be exactly 44 characters, got {len(line)}')
@@ -1037,7 +1037,7 @@
    70:     
    71:     document_type = line1[0:2].rstrip('<')
 --------------------------------------------------------------------------------
-[0.01066 s] killed by test_kill_decode_invalid_chars_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01065 s] killed by test_kill_decode_invalid_chars_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  75] CRP MRTD: 
 --------------------------------------------------------------------------------
    67:                 f'{name} contains invalid characters (only A-Z, 0-9, \'<\' allowed)')
@@ -1051,7 +1051,7 @@
    74:     
    75:     names_raw = line1[5:44]
 --------------------------------------------------------------------------------
-[0.01043 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01028 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  76] CRP MRTD: 
 --------------------------------------------------------------------------------
    67:                 f'{name} contains invalid characters (only A-Z, 0-9, \'<\' allowed)')
@@ -1065,7 +1065,7 @@
    74:     
    75:     names_raw = line1[5:44]
 --------------------------------------------------------------------------------
-[0.01005 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00912 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  77] CRP MRTD: 
 --------------------------------------------------------------------------------
    67:                 f'{name} contains invalid characters (only A-Z, 0-9, \'<\' allowed)')
@@ -1079,7 +1079,7 @@
    74:     
    75:     names_raw = line1[5:44]
 --------------------------------------------------------------------------------
-[0.01043 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00996 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  78] CRP MRTD: 
 --------------------------------------------------------------------------------
    67:                 f'{name} contains invalid characters (only A-Z, 0-9, \'<\' allowed)')
@@ -1093,7 +1093,7 @@
    74:     
    75:     names_raw = line1[5:44]
 --------------------------------------------------------------------------------
-[0.01059 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00940 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  79] CRP MRTD: 
 --------------------------------------------------------------------------------
    68:     
@@ -1107,7 +1107,7 @@
    75:     names_raw = line1[5:44]
    76:     parts = names_raw.split('<<')
 --------------------------------------------------------------------------------
-[0.00984 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00921 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  80] CRP MRTD: 
 --------------------------------------------------------------------------------
    68:     
@@ -1121,7 +1121,7 @@
    75:     names_raw = line1[5:44]
    76:     parts = names_raw.split('<<')
 --------------------------------------------------------------------------------
-[0.01296 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00907 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  81] CRP MRTD: 
 --------------------------------------------------------------------------------
    68:     
@@ -1135,7 +1135,7 @@
    75:     names_raw = line1[5:44]
    76:     parts = names_raw.split('<<')
 --------------------------------------------------------------------------------
-[0.01267 s] killed by test_kill_decode_short_country_padded (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01079 s] killed by test_kill_decode_short_country_padded (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  82] CRP MRTD: 
 --------------------------------------------------------------------------------
    68:     
@@ -1149,7 +1149,7 @@
    75:     names_raw = line1[5:44]
    76:     parts = names_raw.split('<<')
 --------------------------------------------------------------------------------
-[0.01273 s] killed by test_kill_decode_short_country_padded (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01069 s] killed by test_kill_decode_short_country_padded (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  83] CRP MRTD: 
 --------------------------------------------------------------------------------
    71:     document_type = line1[0:2].rstrip('<')
@@ -1163,7 +1163,7 @@
    78:     given_names = parts[1].replace('<', ' ').strip() if len(parts) > 1 else ''
    79:     
 --------------------------------------------------------------------------------
-[0.01101 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00923 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  84] CRP MRTD: 
 --------------------------------------------------------------------------------
    71:     document_type = line1[0:2].rstrip('<')
@@ -1177,7 +1177,7 @@
    78:     given_names = parts[1].replace('<', ' ').strip() if len(parts) > 1 else ''
    79:     
 --------------------------------------------------------------------------------
-[0.01518 s] survived
+[0.01088 s] survived
    - [#  85] CRP MRTD: 
 --------------------------------------------------------------------------------
    72:     issuing_country = line1[2:5].rstrip('<')
@@ -1191,7 +1191,7 @@
    79:     
    80:     
 --------------------------------------------------------------------------------
-[0.01082 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00931 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  86] CRP MRTD: 
 --------------------------------------------------------------------------------
    72:     issuing_country = line1[2:5].rstrip('<')
@@ -1205,7 +1205,7 @@
    79:     
    80:     
 --------------------------------------------------------------------------------
-[0.01216 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00995 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  87] CRP MRTD: 
 --------------------------------------------------------------------------------
    73:     
@@ -1219,7 +1219,7 @@
    80:     
    81:     passport_number = line2[0:9].rstrip('<')
 --------------------------------------------------------------------------------
-[0.01296 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00966 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  88] CRP MRTD: 
 --------------------------------------------------------------------------------
    73:     
@@ -1233,7 +1233,7 @@
    80:     
    81:     passport_number = line2[0:9].rstrip('<')
 --------------------------------------------------------------------------------
-[0.01391 s] killed by test_kill_decode_compound_surname (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01080 s] killed by test_kill_decode_compound_surname (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  89] CRP MRTD: 
 --------------------------------------------------------------------------------
    73:     
@@ -1247,7 +1247,7 @@
    80:     
    81:     passport_number = line2[0:9].rstrip('<')
 --------------------------------------------------------------------------------
-[0.01142 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00881 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  90] CRP MRTD: 
 --------------------------------------------------------------------------------
    73:     
@@ -1261,7 +1261,7 @@
    80:     
    81:     passport_number = line2[0:9].rstrip('<')
 --------------------------------------------------------------------------------
-[0.01453 s] killed by test_kill_decode_compound_surname (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01078 s] killed by test_kill_decode_compound_surname (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  91] CRP MRTD: 
 --------------------------------------------------------------------------------
    73:     
@@ -1275,7 +1275,7 @@
    80:     
    81:     passport_number = line2[0:9].rstrip('<')
 --------------------------------------------------------------------------------
-[0.01336 s] killed by test_kill_decode_compound_surname (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01046 s] killed by test_kill_decode_compound_surname (tests.test_mutpy_additional.TestMutPyAdditional)
    - [#  92] CRP MRTD: 
 --------------------------------------------------------------------------------
    74:     
@@ -1289,7 +1289,7 @@
    81:     passport_number = line2[0:9].rstrip('<')
    82:     check_digit_passport = line2[9]
 --------------------------------------------------------------------------------
-[0.01448 s] survived
+[0.01028 s] survived
    - [#  93] CRP MRTD: 
 --------------------------------------------------------------------------------
    74:     
@@ -1303,7 +1303,7 @@
    81:     passport_number = line2[0:9].rstrip('<')
    82:     check_digit_passport = line2[9]
 --------------------------------------------------------------------------------
-[0.01316 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01025 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  94] CRP MRTD: 
 --------------------------------------------------------------------------------
    74:     
@@ -1317,7 +1317,7 @@
    81:     passport_number = line2[0:9].rstrip('<')
    82:     check_digit_passport = line2[9]
 --------------------------------------------------------------------------------
-[0.01210 s] killed by test_decode_fra_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00938 s] killed by test_decode_fra_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  95] CRP MRTD: 
 --------------------------------------------------------------------------------
    74:     
@@ -1331,7 +1331,7 @@
    81:     passport_number = line2[0:9].rstrip('<')
    82:     check_digit_passport = line2[9]
 --------------------------------------------------------------------------------
-[0.01193 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00909 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  96] CRP MRTD: 
 --------------------------------------------------------------------------------
    74:     
@@ -1345,7 +1345,7 @@
    81:     passport_number = line2[0:9].rstrip('<')
    82:     check_digit_passport = line2[9]
 --------------------------------------------------------------------------------
-[0.01156 s] killed by test_decode_fra_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00857 s] killed by test_decode_fra_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  97] CRP MRTD: 
 --------------------------------------------------------------------------------
    74:     
@@ -1359,7 +1359,7 @@
    81:     passport_number = line2[0:9].rstrip('<')
    82:     check_digit_passport = line2[9]
 --------------------------------------------------------------------------------
-[0.01160 s] killed by test_decode_fra_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00912 s] killed by test_decode_fra_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [#  98] CRP MRTD: 
 --------------------------------------------------------------------------------
    74:     
@@ -1373,7 +1373,7 @@
    81:     passport_number = line2[0:9].rstrip('<')
    82:     check_digit_passport = line2[9]
 --------------------------------------------------------------------------------
-[0.01382 s] survived
+[0.01102 s] survived
    - [#  99] CRP MRTD: 
 --------------------------------------------------------------------------------
    77:     surname = parts[0].replace('<', ' ').strip()
@@ -1387,7 +1387,7 @@
    84:     birth_date = line2[13:19]
    85:     check_digit_birth = line2[19]
 --------------------------------------------------------------------------------
-[0.01130 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00934 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 100] CRP MRTD: 
 --------------------------------------------------------------------------------
    77:     surname = parts[0].replace('<', ' ').strip()
@@ -1401,7 +1401,7 @@
    84:     birth_date = line2[13:19]
    85:     check_digit_birth = line2[19]
 --------------------------------------------------------------------------------
-[0.01198 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00994 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 101] CRP MRTD: 
 --------------------------------------------------------------------------------
    77:     surname = parts[0].replace('<', ' ').strip()
@@ -1415,7 +1415,7 @@
    84:     birth_date = line2[13:19]
    85:     check_digit_birth = line2[19]
 --------------------------------------------------------------------------------
-[0.01221 s] killed by test_kill_decode_short_passport_padded (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01163 s] killed by test_kill_decode_short_passport_padded (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 102] CRP MRTD: 
 --------------------------------------------------------------------------------
    77:     surname = parts[0].replace('<', ' ').strip()
@@ -1429,7 +1429,7 @@
    84:     birth_date = line2[13:19]
    85:     check_digit_birth = line2[19]
 --------------------------------------------------------------------------------
-[0.01415 s] killed by test_kill_decode_short_passport_padded (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01130 s] killed by test_kill_decode_short_passport_padded (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 103] CRP MRTD: 
 --------------------------------------------------------------------------------
    78:     given_names = parts[1].replace('<', ' ').strip() if len(parts) > 1 else ''
@@ -1443,7 +1443,7 @@
    85:     check_digit_birth = line2[19]
    86:     sex = line2[20]
 --------------------------------------------------------------------------------
-[0.01262 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00959 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 104] CRP MRTD: 
 --------------------------------------------------------------------------------
    79:     
@@ -1457,7 +1457,7 @@
    86:     sex = line2[20]
    87:     expiration_date = line2[21:27]
 --------------------------------------------------------------------------------
-[0.01156 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00894 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 105] CRP MRTD: 
 --------------------------------------------------------------------------------
    79:     
@@ -1471,7 +1471,7 @@
    86:     sex = line2[20]
    87:     expiration_date = line2[21:27]
 --------------------------------------------------------------------------------
-[0.01174 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00977 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 106] CRP MRTD: 
 --------------------------------------------------------------------------------
    79:     
@@ -1485,7 +1485,7 @@
    86:     sex = line2[20]
    87:     expiration_date = line2[21:27]
 --------------------------------------------------------------------------------
-[0.01391 s] killed by test_kill_decode_short_country_padded (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01066 s] killed by test_kill_decode_short_country_padded (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 107] CRP MRTD: 
 --------------------------------------------------------------------------------
    79:     
@@ -1499,7 +1499,7 @@
    86:     sex = line2[20]
    87:     expiration_date = line2[21:27]
 --------------------------------------------------------------------------------
-[0.01508 s] killed by test_kill_decode_short_country_padded (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01042 s] killed by test_kill_decode_short_country_padded (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 108] CRP MRTD: 
 --------------------------------------------------------------------------------
    80:     
@@ -1513,7 +1513,7 @@
    87:     expiration_date = line2[21:27]
    88:     check_digit_expiration = line2[27]
 --------------------------------------------------------------------------------
-[0.01207 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00959 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 109] CRP MRTD: 
 --------------------------------------------------------------------------------
    80:     
@@ -1527,7 +1527,7 @@
    87:     expiration_date = line2[21:27]
    88:     check_digit_expiration = line2[27]
 --------------------------------------------------------------------------------
-[0.01242 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00981 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 110] CRP MRTD: 
 --------------------------------------------------------------------------------
    81:     passport_number = line2[0:9].rstrip('<')
@@ -1541,7 +1541,7 @@
    88:     check_digit_expiration = line2[27]
    89:     personal_number = line2[28:42].rstrip('<')
 --------------------------------------------------------------------------------
-[0.01261 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00924 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 111] CRP MRTD: 
 --------------------------------------------------------------------------------
    82:     check_digit_passport = line2[9]
@@ -1555,7 +1555,7 @@
    89:     personal_number = line2[28:42].rstrip('<')
    90:     check_digit_personal = line2[42]
 --------------------------------------------------------------------------------
-[0.01348 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00976 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 112] CRP MRTD: 
 --------------------------------------------------------------------------------
    83:     country_code = line2[10:13].rstrip('<')
@@ -1569,7 +1569,7 @@
    90:     check_digit_personal = line2[42]
    91:     overall_check_digit = line2[43]
 --------------------------------------------------------------------------------
-[0.01146 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01406 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 113] CRP MRTD: 
 --------------------------------------------------------------------------------
    83:     country_code = line2[10:13].rstrip('<')
@@ -1583,7 +1583,7 @@
    90:     check_digit_personal = line2[42]
    91:     overall_check_digit = line2[43]
 --------------------------------------------------------------------------------
-[0.01309 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01004 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 114] CRP MRTD: 
 --------------------------------------------------------------------------------
    84:     birth_date = line2[13:19]
@@ -1597,7 +1597,7 @@
    91:     overall_check_digit = line2[43]
    92:     
 --------------------------------------------------------------------------------
-[0.01378 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01130 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 115] CRP MRTD: 
 --------------------------------------------------------------------------------
    85:     check_digit_birth = line2[19]
@@ -1611,7 +1611,7 @@
    92:     
    93:     return {\
 --------------------------------------------------------------------------------
-[0.01206 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01182 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 116] CRP MRTD: 
 --------------------------------------------------------------------------------
    85:     check_digit_birth = line2[19]
@@ -1625,7 +1625,7 @@
    92:     
    93:     return {\
 --------------------------------------------------------------------------------
-[0.01142 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00982 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 117] CRP MRTD: 
 --------------------------------------------------------------------------------
    85:     check_digit_birth = line2[19]
@@ -1639,7 +1639,7 @@
    92:     
    93:     return {\
 --------------------------------------------------------------------------------
-[0.01245 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00938 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 118] CRP MRTD: 
 --------------------------------------------------------------------------------
    85:     check_digit_birth = line2[19]
@@ -1653,7 +1653,7 @@
    92:     
    93:     return {\
 --------------------------------------------------------------------------------
-[0.01360 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00942 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 119] CRP MRTD: 
 --------------------------------------------------------------------------------
    86:     sex = line2[20]
@@ -1667,7 +1667,7 @@
    93:     return {\
    94:         'document_type': document_type, \
 --------------------------------------------------------------------------------
-[0.01303 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00970 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 120] CRP MRTD: 
 --------------------------------------------------------------------------------
    87:     expiration_date = line2[21:27]
@@ -1681,7 +1681,7 @@
    94:         'document_type': document_type, \
    95:         'issuing_country': issuing_country, \
 --------------------------------------------------------------------------------
-[0.01320 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00909 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 121] CRP MRTD: 
 --------------------------------------------------------------------------------
    90:     check_digit_personal = line2[42]
@@ -1695,7 +1695,7 @@
    97:         'given_names': given_names, \
    98:         'passport_number': passport_number, \
 --------------------------------------------------------------------------------
-[0.01287 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01124 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 122] CRP MRTD: 
 --------------------------------------------------------------------------------
    90:     check_digit_personal = line2[42]
@@ -1709,7 +1709,7 @@
    97:         'given_names': given_names, \
    98:         'passport_number': passport_number, \
 --------------------------------------------------------------------------------
-[0.01295 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01114 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 123] CRP MRTD: 
 --------------------------------------------------------------------------------
    91:     overall_check_digit = line2[43]
@@ -1723,7 +1723,7 @@
    98:         'passport_number': passport_number, \
    99:         'check_digit_passport': check_digit_passport, \
 --------------------------------------------------------------------------------
-[0.01214 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00969 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 124] CRP MRTD: 
 --------------------------------------------------------------------------------
    91:     overall_check_digit = line2[43]
@@ -1737,7 +1737,7 @@
    98:         'passport_number': passport_number, \
    99:         'check_digit_passport': check_digit_passport, \
 --------------------------------------------------------------------------------
-[0.01198 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00952 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 125] CRP MRTD: 
 --------------------------------------------------------------------------------
    92:     
@@ -1751,7 +1751,7 @@
    99:         'check_digit_passport': check_digit_passport, \
   100:         'country_code': country_code, \
 --------------------------------------------------------------------------------
-[0.01337 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01046 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 126] CRP MRTD: 
 --------------------------------------------------------------------------------
    92:     
@@ -1765,7 +1765,7 @@
    99:         'check_digit_passport': check_digit_passport, \
   100:         'country_code': country_code, \
 --------------------------------------------------------------------------------
-[0.01200 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00960 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 127] CRP MRTD: 
 --------------------------------------------------------------------------------
    93:     return {\
@@ -1779,7 +1779,7 @@
   100:         'country_code': country_code, \
   101:         'birth_date': birth_date, \
 --------------------------------------------------------------------------------
-[0.01122 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00945 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 128] CRP MRTD: 
 --------------------------------------------------------------------------------
    93:     return {\
@@ -1793,7 +1793,7 @@
   100:         'country_code': country_code, \
   101:         'birth_date': birth_date, \
 --------------------------------------------------------------------------------
-[0.01112 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01021 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 129] CRP MRTD: 
 --------------------------------------------------------------------------------
    94:         'document_type': document_type, \
@@ -1807,7 +1807,7 @@
   101:         'birth_date': birth_date, \
   102:         'check_digit_birth': check_digit_birth, \
 --------------------------------------------------------------------------------
-[0.01127 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01227 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 130] CRP MRTD: 
 --------------------------------------------------------------------------------
    94:         'document_type': document_type, \
@@ -1821,7 +1821,7 @@
   101:         'birth_date': birth_date, \
   102:         'check_digit_birth': check_digit_birth, \
 --------------------------------------------------------------------------------
-[0.01239 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01193 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 131] CRP MRTD: 
 --------------------------------------------------------------------------------
    95:         'issuing_country': issuing_country, \
@@ -1835,7 +1835,7 @@
   102:         'check_digit_birth': check_digit_birth, \
   103:         'sex': sex, \
 --------------------------------------------------------------------------------
-[0.01152 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00926 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 132] CRP MRTD: 
 --------------------------------------------------------------------------------
    95:         'issuing_country': issuing_country, \
@@ -1849,7 +1849,7 @@
   102:         'check_digit_birth': check_digit_birth, \
   103:         'sex': sex, \
 --------------------------------------------------------------------------------
-[0.01124 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00927 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 133] CRP MRTD: 
 --------------------------------------------------------------------------------
    96:         'surname': surname, \
@@ -1863,7 +1863,7 @@
   103:         'sex': sex, \
   104:         'expiration_date': expiration_date, \
 --------------------------------------------------------------------------------
-[0.01176 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00919 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 134] CRP MRTD: 
 --------------------------------------------------------------------------------
    96:         'surname': surname, \
@@ -1877,7 +1877,7 @@
   103:         'sex': sex, \
   104:         'expiration_date': expiration_date, \
 --------------------------------------------------------------------------------
-[0.01033 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00943 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 135] CRP MRTD: 
 --------------------------------------------------------------------------------
    97:         'given_names': given_names, \
@@ -1891,7 +1891,7 @@
   104:         'expiration_date': expiration_date, \
   105:         'check_digit_expiration': check_digit_expiration, \
 --------------------------------------------------------------------------------
-[0.01136 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00966 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 136] CRP MRTD: 
 --------------------------------------------------------------------------------
    97:         'given_names': given_names, \
@@ -1905,7 +1905,7 @@
   104:         'expiration_date': expiration_date, \
   105:         'check_digit_expiration': check_digit_expiration, \
 --------------------------------------------------------------------------------
-[0.01069 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00941 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 137] CRP MRTD: 
 --------------------------------------------------------------------------------
    98:         'passport_number': passport_number, \
@@ -1919,7 +1919,7 @@
   105:         'check_digit_expiration': check_digit_expiration, \
   106:         'personal_number': personal_number, \
 --------------------------------------------------------------------------------
-[0.01223 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01065 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 138] CRP MRTD: 
 --------------------------------------------------------------------------------
    98:         'passport_number': passport_number, \
@@ -1933,7 +1933,7 @@
   105:         'check_digit_expiration': check_digit_expiration, \
   106:         'personal_number': personal_number, \
 --------------------------------------------------------------------------------
-[0.01137 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01227 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 139] CRP MRTD: 
 --------------------------------------------------------------------------------
    99:         'check_digit_passport': check_digit_passport, \
@@ -1947,7 +1947,7 @@
   106:         'personal_number': personal_number, \
   107:         'check_digit_personal': check_digit_personal, \
 --------------------------------------------------------------------------------
-[0.01070 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01177 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 140] CRP MRTD: 
 --------------------------------------------------------------------------------
    99:         'check_digit_passport': check_digit_passport, \
@@ -1961,7 +1961,7 @@
   106:         'personal_number': personal_number, \
   107:         'check_digit_personal': check_digit_personal, \
 --------------------------------------------------------------------------------
-[0.01125 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01023 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 141] CRP MRTD: 
 --------------------------------------------------------------------------------
   100:         'country_code': country_code, \
@@ -1975,7 +1975,7 @@
   107:         'check_digit_personal': check_digit_personal, \
   108:         'overall_check_digit': overall_check_digit}
 --------------------------------------------------------------------------------
-[0.01341 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01244 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 142] CRP MRTD: 
 --------------------------------------------------------------------------------
   100:         'country_code': country_code, \
@@ -1989,7 +1989,7 @@
   107:         'check_digit_personal': check_digit_personal, \
   108:         'overall_check_digit': overall_check_digit}
 --------------------------------------------------------------------------------
-[0.01295 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01113 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 143] CRP MRTD: 
 --------------------------------------------------------------------------------
   101:         'birth_date': birth_date, \
@@ -2003,7 +2003,7 @@
   108:         'overall_check_digit': overall_check_digit}
   109: 
 --------------------------------------------------------------------------------
-[0.01223 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01033 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 144] CRP MRTD: 
 --------------------------------------------------------------------------------
   101:         'birth_date': birth_date, \
@@ -2017,7 +2017,7 @@
   108:         'overall_check_digit': overall_check_digit}
   109: 
 --------------------------------------------------------------------------------
-[0.01320 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00985 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 145] CRP MRTD: 
 --------------------------------------------------------------------------------
   102:         'check_digit_birth': check_digit_birth, \
@@ -2031,7 +2031,7 @@
   109: 
   110: 
 --------------------------------------------------------------------------------
-[0.01078 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00993 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 146] CRP MRTD: 
 --------------------------------------------------------------------------------
   102:         'check_digit_birth': check_digit_birth, \
@@ -2045,7 +2045,7 @@
   109: 
   110: 
 --------------------------------------------------------------------------------
-[0.01073 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01213 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 147] CRP MRTD: 
 --------------------------------------------------------------------------------
   103:         'sex': sex, \
@@ -2059,7 +2059,7 @@
   110: 
   111: 
 --------------------------------------------------------------------------------
-[0.01039 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01097 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 148] CRP MRTD: 
 --------------------------------------------------------------------------------
   103:         'sex': sex, \
@@ -2073,7 +2073,7 @@
   110: 
   111: 
 --------------------------------------------------------------------------------
-[0.01035 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00925 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 149] CRP MRTD: 
 --------------------------------------------------------------------------------
   104:         'expiration_date': expiration_date, \
@@ -2087,7 +2087,7 @@
   111: 
   112: _REQUIRED_ENCODE_FIELDS = [\
 --------------------------------------------------------------------------------
-[0.01009 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01012 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 150] CRP MRTD: 
 --------------------------------------------------------------------------------
   104:         'expiration_date': expiration_date, \
@@ -2101,7 +2101,7 @@
   111: 
   112: _REQUIRED_ENCODE_FIELDS = [\
 --------------------------------------------------------------------------------
-[0.01184 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00980 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 151] CRP MRTD: 
 --------------------------------------------------------------------------------
   109: 
@@ -2115,7 +2115,7 @@
   116: 
   117: 
 --------------------------------------------------------------------------------
-[0.01138 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01216 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 152] CRP MRTD: 
 --------------------------------------------------------------------------------
   109: 
@@ -2129,7 +2129,7 @@
   116: 
   117: 
 --------------------------------------------------------------------------------
-[0.01234 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00998 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 153] CRP MRTD: 
 --------------------------------------------------------------------------------
   109: 
@@ -2143,7 +2143,7 @@
   116: 
   117: 
 --------------------------------------------------------------------------------
-[0.01013 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00934 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 154] CRP MRTD: 
 --------------------------------------------------------------------------------
   109: 
@@ -2157,7 +2157,7 @@
   116: 
   117: 
 --------------------------------------------------------------------------------
-[0.01070 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01019 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 155] CRP MRTD: 
 --------------------------------------------------------------------------------
   109: 
@@ -2171,7 +2171,7 @@
   116: 
   117: 
 --------------------------------------------------------------------------------
-[0.00970 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01011 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 156] CRP MRTD: 
 --------------------------------------------------------------------------------
   109: 
@@ -2185,7 +2185,7 @@
   116: 
   117: 
 --------------------------------------------------------------------------------
-[0.01014 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00980 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 157] CRP MRTD: 
 --------------------------------------------------------------------------------
   109: 
@@ -2199,7 +2199,7 @@
   116: 
   117: 
 --------------------------------------------------------------------------------
-[0.01062 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01023 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 158] CRP MRTD: 
 --------------------------------------------------------------------------------
   109: 
@@ -2213,7 +2213,7 @@
   116: 
   117: 
 --------------------------------------------------------------------------------
-[0.01082 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00972 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 159] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2227,7 +2227,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.01040 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00982 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 160] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2241,7 +2241,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.00978 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00960 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 161] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2255,7 +2255,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.01019 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00988 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 162] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2269,7 +2269,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.01112 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01005 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 163] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2283,7 +2283,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.01132 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00952 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 164] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2297,7 +2297,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.01021 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00940 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 165] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2311,7 +2311,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.01060 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01021 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 166] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2325,7 +2325,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.00995 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01022 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 167] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2339,7 +2339,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.01071 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01025 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 168] CRP MRTD: 
 --------------------------------------------------------------------------------
   110: 
@@ -2353,7 +2353,7 @@
   117: 
   118: def encode_mrz(fields: dict) -> tuple:
 --------------------------------------------------------------------------------
-[0.01117 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00948 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 169] CRP MRTD: 
 --------------------------------------------------------------------------------
   125:     """
@@ -2367,7 +2367,7 @@
   132:     document_type = fields['document_type'].upper()
   133:     issuing_country = fields['issuing_country'].upper()
 --------------------------------------------------------------------------------
-[0.01194 s] killed by test_kill_encode_required_field_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01046 s] killed by test_kill_encode_required_field_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 170] CRP MRTD: 
 --------------------------------------------------------------------------------
   125:     """
@@ -2381,7 +2381,7 @@
   132:     document_type = fields['document_type'].upper()
   133:     issuing_country = fields['issuing_country'].upper()
 --------------------------------------------------------------------------------
-[0.01154 s] killed by test_kill_encode_required_field_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01037 s] killed by test_kill_encode_required_field_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 171] CRP MRTD: 
 --------------------------------------------------------------------------------
   125:     """
@@ -2395,7 +2395,7 @@
   132:     document_type = fields['document_type'].upper()
   133:     issuing_country = fields['issuing_country'].upper()
 --------------------------------------------------------------------------------
-[0.01100 s] survived
+[0.01246 s] killed by test_kill_encode_required_field_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 172] CRP MRTD: 
 --------------------------------------------------------------------------------
   125:     """
@@ -2409,7 +2409,7 @@
   132:     document_type = fields['document_type'].upper()
   133:     issuing_country = fields['issuing_country'].upper()
 --------------------------------------------------------------------------------
-[0.01060 s] survived
+[0.01144 s] killed by test_kill_encode_required_field_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 173] CRP MRTD: 
 --------------------------------------------------------------------------------
   128:         if (field not in fields or not (fields[field])):
@@ -2423,7 +2423,7 @@
   135:     given_names = fields['given_names'].upper().replace(' ', '<')
   136:     passport_number = fields['passport_number'].upper()
 --------------------------------------------------------------------------------
-[0.01005 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01107 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 174] CRP MRTD: 
 --------------------------------------------------------------------------------
   128:         if (field not in fields or not (fields[field])):
@@ -2437,7 +2437,7 @@
   135:     given_names = fields['given_names'].upper().replace(' ', '<')
   136:     passport_number = fields['passport_number'].upper()
 --------------------------------------------------------------------------------
-[0.01000 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00984 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 175] CRP MRTD: 
 --------------------------------------------------------------------------------
   129:             raise ValueError(f'Required field {field} is missing or empty')
@@ -2451,7 +2451,7 @@
   136:     passport_number = fields['passport_number'].upper()
   137:     country_code = fields['country_code'].upper()
 --------------------------------------------------------------------------------
-[0.01035 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00980 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 176] CRP MRTD: 
 --------------------------------------------------------------------------------
   129:             raise ValueError(f'Required field {field} is missing or empty')
@@ -2465,7 +2465,7 @@
   136:     passport_number = fields['passport_number'].upper()
   137:     country_code = fields['country_code'].upper()
 --------------------------------------------------------------------------------
-[0.01112 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01002 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 177] CRP MRTD: 
 --------------------------------------------------------------------------------
   130:     
@@ -2479,7 +2479,7 @@
   137:     country_code = fields['country_code'].upper()
   138:     birth_date = fields['birth_date']
 --------------------------------------------------------------------------------
-[0.01058 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00998 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 178] CRP MRTD: 
 --------------------------------------------------------------------------------
   130:     
@@ -2493,7 +2493,7 @@
   137:     country_code = fields['country_code'].upper()
   138:     birth_date = fields['birth_date']
 --------------------------------------------------------------------------------
-[0.01066 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01020 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 179] CRP MRTD: 
 --------------------------------------------------------------------------------
   130:     
@@ -2507,7 +2507,7 @@
   137:     country_code = fields['country_code'].upper()
   138:     birth_date = fields['birth_date']
 --------------------------------------------------------------------------------
-[0.01163 s] killed by test_kill_encode_surname_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01113 s] killed by test_kill_encode_surname_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 180] CRP MRTD: 
 --------------------------------------------------------------------------------
   130:     
@@ -2521,7 +2521,7 @@
   137:     country_code = fields['country_code'].upper()
   138:     birth_date = fields['birth_date']
 --------------------------------------------------------------------------------
-[0.01020 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00990 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 181] CRP MRTD: 
 --------------------------------------------------------------------------------
   130:     
@@ -2535,7 +2535,7 @@
   137:     country_code = fields['country_code'].upper()
   138:     birth_date = fields['birth_date']
 --------------------------------------------------------------------------------
-[0.01268 s] killed by test_kill_encode_surname_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01161 s] killed by test_kill_encode_surname_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 182] CRP MRTD: 
 --------------------------------------------------------------------------------
   130:     
@@ -2549,7 +2549,7 @@
   137:     country_code = fields['country_code'].upper()
   138:     birth_date = fields['birth_date']
 --------------------------------------------------------------------------------
-[0.01451 s] killed by test_kill_encode_surname_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01240 s] killed by test_kill_encode_surname_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 183] CRP MRTD: 
 --------------------------------------------------------------------------------
   131:     
@@ -2563,7 +2563,7 @@
   138:     birth_date = fields['birth_date']
   139:     sex = fields['sex'].upper()
 --------------------------------------------------------------------------------
-[0.01278 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01029 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 184] CRP MRTD: 
 --------------------------------------------------------------------------------
   131:     
@@ -2577,7 +2577,7 @@
   138:     birth_date = fields['birth_date']
   139:     sex = fields['sex'].upper()
 --------------------------------------------------------------------------------
-[0.01257 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00943 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 185] CRP MRTD: 
 --------------------------------------------------------------------------------
   131:     
@@ -2591,7 +2591,7 @@
   138:     birth_date = fields['birth_date']
   139:     sex = fields['sex'].upper()
 --------------------------------------------------------------------------------
-[0.01268 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00999 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 186] CRP MRTD: 
 --------------------------------------------------------------------------------
   131:     
@@ -2605,7 +2605,7 @@
   138:     birth_date = fields['birth_date']
   139:     sex = fields['sex'].upper()
 --------------------------------------------------------------------------------
-[0.01255 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01093 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 187] CRP MRTD: 
 --------------------------------------------------------------------------------
   131:     
@@ -2619,7 +2619,7 @@
   138:     birth_date = fields['birth_date']
   139:     sex = fields['sex'].upper()
 --------------------------------------------------------------------------------
-[0.01090 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00966 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 188] CRP MRTD: 
 --------------------------------------------------------------------------------
   131:     
@@ -2633,7 +2633,7 @@
   138:     birth_date = fields['birth_date']
   139:     sex = fields['sex'].upper()
 --------------------------------------------------------------------------------
-[0.01188 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01000 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 189] CRP MRTD: 
 --------------------------------------------------------------------------------
   132:     document_type = fields['document_type'].upper()
@@ -2647,7 +2647,7 @@
   139:     sex = fields['sex'].upper()
   140:     expiration_date = fields['expiration_date']
 --------------------------------------------------------------------------------
-[0.01318 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01006 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 190] CRP MRTD: 
 --------------------------------------------------------------------------------
   132:     document_type = fields['document_type'].upper()
@@ -2661,7 +2661,7 @@
   139:     sex = fields['sex'].upper()
   140:     expiration_date = fields['expiration_date']
 --------------------------------------------------------------------------------
-[0.01333 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00986 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 191] CRP MRTD: 
 --------------------------------------------------------------------------------
   133:     issuing_country = fields['issuing_country'].upper()
@@ -2675,7 +2675,7 @@
   140:     expiration_date = fields['expiration_date']
   141:     personal_number = fields.get('personal_number', '').upper().replace(' ', '<')
 --------------------------------------------------------------------------------
-[0.01221 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00992 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 192] CRP MRTD: 
 --------------------------------------------------------------------------------
   133:     issuing_country = fields['issuing_country'].upper()
@@ -2689,7 +2689,7 @@
   140:     expiration_date = fields['expiration_date']
   141:     personal_number = fields.get('personal_number', '').upper().replace(' ', '<')
 --------------------------------------------------------------------------------
-[0.01028 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01163 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 193] CRP MRTD: 
 --------------------------------------------------------------------------------
   134:     surname = fields['surname'].upper().replace(' ', '<')
@@ -2703,7 +2703,7 @@
   141:     personal_number = fields.get('personal_number', '').upper().replace(' ', '<')
   142:     
 --------------------------------------------------------------------------------
-[0.01080 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01048 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 194] CRP MRTD: 
 --------------------------------------------------------------------------------
   134:     surname = fields['surname'].upper().replace(' ', '<')
@@ -2717,7 +2717,7 @@
   141:     personal_number = fields.get('personal_number', '').upper().replace(' ', '<')
   142:     
 --------------------------------------------------------------------------------
-[0.01062 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01272 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 195] CRP MRTD: 
 --------------------------------------------------------------------------------
   135:     given_names = fields['given_names'].upper().replace(' ', '<')
@@ -2731,7 +2731,7 @@
   142:     
   143:     
 --------------------------------------------------------------------------------
-[0.01297 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01253 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 196] CRP MRTD: 
 --------------------------------------------------------------------------------
   135:     given_names = fields['given_names'].upper().replace(' ', '<')
@@ -2745,7 +2745,7 @@
   142:     
   143:     
 --------------------------------------------------------------------------------
-[0.01367 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01121 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 197] CRP MRTD: 
 --------------------------------------------------------------------------------
   136:     passport_number = fields['passport_number'].upper()
@@ -2759,7 +2759,7 @@
   143:     
   144:     if (len(document_type) < 1 or len(document_type) > 2):
 --------------------------------------------------------------------------------
-[0.01122 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01131 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 198] CRP MRTD: 
 --------------------------------------------------------------------------------
   136:     passport_number = fields['passport_number'].upper()
@@ -2773,7 +2773,7 @@
   143:     
   144:     if (len(document_type) < 1 or len(document_type) > 2):
 --------------------------------------------------------------------------------
-[0.01045 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00983 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 199] CRP MRTD: 
 --------------------------------------------------------------------------------
   137:     country_code = fields['country_code'].upper()
@@ -2787,7 +2787,7 @@
   144:     if (len(document_type) < 1 or len(document_type) > 2):
   145:         raise ValueError('document_type must be 1-2 characters')
 --------------------------------------------------------------------------------
-[0.01139 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01015 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 200] CRP MRTD: 
 --------------------------------------------------------------------------------
   137:     country_code = fields['country_code'].upper()
@@ -2801,7 +2801,7 @@
   144:     if (len(document_type) < 1 or len(document_type) > 2):
   145:         raise ValueError('document_type must be 1-2 characters')
 --------------------------------------------------------------------------------
-[0.01051 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00993 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 201] CRP MRTD: 
 --------------------------------------------------------------------------------
   137:     country_code = fields['country_code'].upper()
@@ -2815,7 +2815,7 @@
   144:     if (len(document_type) < 1 or len(document_type) > 2):
   145:         raise ValueError('document_type must be 1-2 characters')
 --------------------------------------------------------------------------------
-[0.01092 s] killed by test_encode_no_personal_number (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01057 s] killed by test_encode_no_personal_number (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 202] CRP MRTD: 
 --------------------------------------------------------------------------------
   137:     country_code = fields['country_code'].upper()
@@ -2829,7 +2829,7 @@
   144:     if (len(document_type) < 1 or len(document_type) > 2):
   145:         raise ValueError('document_type must be 1-2 characters')
 --------------------------------------------------------------------------------
-[0.01298 s] killed by test_kill_encode_personal_number_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01132 s] killed by test_kill_encode_personal_number_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 203] CRP MRTD: 
 --------------------------------------------------------------------------------
   137:     country_code = fields['country_code'].upper()
@@ -2843,7 +2843,7 @@
   144:     if (len(document_type) < 1 or len(document_type) > 2):
   145:         raise ValueError('document_type must be 1-2 characters')
 --------------------------------------------------------------------------------
-[0.01298 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01013 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 204] CRP MRTD: 
 --------------------------------------------------------------------------------
   137:     country_code = fields['country_code'].upper()
@@ -2857,7 +2857,7 @@
   144:     if (len(document_type) < 1 or len(document_type) > 2):
   145:         raise ValueError('document_type must be 1-2 characters')
 --------------------------------------------------------------------------------
-[0.01469 s] killed by test_kill_encode_personal_number_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01112 s] killed by test_kill_encode_personal_number_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 205] CRP MRTD: 
 --------------------------------------------------------------------------------
   137:     country_code = fields['country_code'].upper()
@@ -2871,7 +2871,7 @@
   144:     if (len(document_type) < 1 or len(document_type) > 2):
   145:         raise ValueError('document_type must be 1-2 characters')
 --------------------------------------------------------------------------------
-[0.01348 s] killed by test_kill_encode_personal_number_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01134 s] killed by test_kill_encode_personal_number_with_spaces (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 206] CRP MRTD: 
 --------------------------------------------------------------------------------
   140:     expiration_date = fields['expiration_date']
@@ -2885,7 +2885,7 @@
   147:         raise ValueError('issuing_country must be exactly 3 characters')
   148:     if len(passport_number) != 9:
 --------------------------------------------------------------------------------
-[0.01026 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00995 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 207] CRP MRTD: 
 --------------------------------------------------------------------------------
   140:     expiration_date = fields['expiration_date']
@@ -2899,7 +2899,7 @@
   147:         raise ValueError('issuing_country must be exactly 3 characters')
   148:     if len(passport_number) != 9:
 --------------------------------------------------------------------------------
-[0.01128 s] killed by test_kill_encode_doctype_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01134 s] killed by test_kill_encode_doctype_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 208] CRP MRTD: 
 --------------------------------------------------------------------------------
   141:     personal_number = fields.get('personal_number', '').upper().replace(' ', '<')
@@ -2913,7 +2913,7 @@
   148:     if len(passport_number) != 9:
   149:         raise ValueError('passport_number must be exactly 9 characters')
 --------------------------------------------------------------------------------
-[0.01171 s] killed by test_kill_encode_doctype_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01104 s] killed by test_kill_encode_doctype_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 209] CRP MRTD: 
 --------------------------------------------------------------------------------
   141:     personal_number = fields.get('personal_number', '').upper().replace(' ', '<')
@@ -2927,7 +2927,7 @@
   148:     if len(passport_number) != 9:
   149:         raise ValueError('passport_number must be exactly 9 characters')
 --------------------------------------------------------------------------------
-[0.01231 s] killed by test_kill_encode_doctype_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01058 s] killed by test_kill_encode_doctype_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 210] CRP MRTD: 
 --------------------------------------------------------------------------------
   142:     
@@ -2941,7 +2941,7 @@
   149:         raise ValueError('passport_number must be exactly 9 characters')
   150:     if len(country_code) != 3:
 --------------------------------------------------------------------------------
-[0.01030 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00999 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 211] CRP MRTD: 
 --------------------------------------------------------------------------------
   143:     
@@ -2955,7 +2955,7 @@
   150:     if len(country_code) != 3:
   151:         raise ValueError('country_code must be exactly 3 characters')
 --------------------------------------------------------------------------------
-[0.01147 s] killed by test_kill_encode_issuing_country_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01080 s] killed by test_kill_encode_issuing_country_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 212] CRP MRTD: 
 --------------------------------------------------------------------------------
   143:     
@@ -2969,7 +2969,7 @@
   150:     if len(country_code) != 3:
   151:         raise ValueError('country_code must be exactly 3 characters')
 --------------------------------------------------------------------------------
-[0.01124 s] killed by test_kill_encode_issuing_country_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01040 s] killed by test_kill_encode_issuing_country_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 213] CRP MRTD: 
 --------------------------------------------------------------------------------
   144:     if (len(document_type) < 1 or len(document_type) > 2):
@@ -2983,7 +2983,7 @@
   151:         raise ValueError('country_code must be exactly 3 characters')
   152:     if len(birth_date) != 6:
 --------------------------------------------------------------------------------
-[0.01147 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01206 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 214] CRP MRTD: 
 --------------------------------------------------------------------------------
   145:         raise ValueError('document_type must be 1-2 characters')
@@ -2997,7 +2997,7 @@
   152:     if len(birth_date) != 6:
   153:         raise ValueError('birth_date must be exactly 6 characters')
 --------------------------------------------------------------------------------
-[0.01295 s] killed by test_kill_encode_passport_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01258 s] killed by test_kill_encode_passport_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 215] CRP MRTD: 
 --------------------------------------------------------------------------------
   145:         raise ValueError('document_type must be 1-2 characters')
@@ -3011,7 +3011,7 @@
   152:     if len(birth_date) != 6:
   153:         raise ValueError('birth_date must be exactly 6 characters')
 --------------------------------------------------------------------------------
-[0.01233 s] killed by test_kill_encode_passport_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01284 s] killed by test_kill_encode_passport_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 216] CRP MRTD: 
 --------------------------------------------------------------------------------
   146:     if len(issuing_country) != 3:
@@ -3025,7 +3025,7 @@
   153:         raise ValueError('birth_date must be exactly 6 characters')
   154:     if len(sex) != 1:
 --------------------------------------------------------------------------------
-[0.01034 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01134 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 217] CRP MRTD: 
 --------------------------------------------------------------------------------
   147:         raise ValueError('issuing_country must be exactly 3 characters')
@@ -3039,7 +3039,7 @@
   154:     if len(sex) != 1:
   155:         raise ValueError('sex must be exactly 1 character')
 --------------------------------------------------------------------------------
-[0.01257 s] killed by test_kill_encode_country_code_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01234 s] killed by test_kill_encode_country_code_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 218] CRP MRTD: 
 --------------------------------------------------------------------------------
   147:         raise ValueError('issuing_country must be exactly 3 characters')
@@ -3053,7 +3053,7 @@
   154:     if len(sex) != 1:
   155:         raise ValueError('sex must be exactly 1 character')
 --------------------------------------------------------------------------------
-[0.01294 s] killed by test_kill_encode_country_code_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01288 s] killed by test_kill_encode_country_code_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 219] CRP MRTD: 
 --------------------------------------------------------------------------------
   148:     if len(passport_number) != 9:
@@ -3067,7 +3067,7 @@
   155:         raise ValueError('sex must be exactly 1 character')
   156:     if len(expiration_date) != 6:
 --------------------------------------------------------------------------------
-[0.01042 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01267 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 220] CRP MRTD: 
 --------------------------------------------------------------------------------
   149:         raise ValueError('passport_number must be exactly 9 characters')
@@ -3081,7 +3081,7 @@
   156:     if len(expiration_date) != 6:
   157:         raise ValueError('expiration_date must be exactly 6 characters')
 --------------------------------------------------------------------------------
-[0.01181 s] killed by test_kill_encode_birth_date_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01334 s] killed by test_kill_encode_birth_date_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 221] CRP MRTD: 
 --------------------------------------------------------------------------------
   149:         raise ValueError('passport_number must be exactly 9 characters')
@@ -3095,7 +3095,7 @@
   156:     if len(expiration_date) != 6:
   157:         raise ValueError('expiration_date must be exactly 6 characters')
 --------------------------------------------------------------------------------
-[0.01086 s] killed by test_kill_encode_birth_date_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01351 s] killed by test_kill_encode_birth_date_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 222] CRP MRTD: 
 --------------------------------------------------------------------------------
   150:     if len(country_code) != 3:
@@ -3109,7 +3109,7 @@
   157:         raise ValueError('expiration_date must be exactly 6 characters')
   158:     
 --------------------------------------------------------------------------------
-[0.01139 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01260 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 223] CRP MRTD: 
 --------------------------------------------------------------------------------
   151:         raise ValueError('country_code must be exactly 3 characters')
@@ -3123,7 +3123,7 @@
   158:     
   159:     
 --------------------------------------------------------------------------------
-[0.01434 s] killed by test_kill_encode_sex_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01178 s] killed by test_kill_encode_sex_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 224] CRP MRTD: 
 --------------------------------------------------------------------------------
   151:         raise ValueError('country_code must be exactly 3 characters')
@@ -3137,7 +3137,7 @@
   158:     
   159:     
 --------------------------------------------------------------------------------
-[0.01354 s] killed by test_kill_encode_sex_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01307 s] killed by test_kill_encode_sex_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 225] CRP MRTD: 
 --------------------------------------------------------------------------------
   152:     if len(birth_date) != 6:
@@ -3151,7 +3151,7 @@
   159:     
   160:     doc_type_padded = document_type.ljust(2, '<')
 --------------------------------------------------------------------------------
-[0.01157 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01206 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 226] CRP MRTD: 
 --------------------------------------------------------------------------------
   153:         raise ValueError('birth_date must be exactly 6 characters')
@@ -3165,7 +3165,7 @@
   160:     doc_type_padded = document_type.ljust(2, '<')
   161:     names_field = (surname + '<<') + given_names
 --------------------------------------------------------------------------------
-[0.01438 s] killed by test_kill_encode_expiration_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01327 s] killed by test_kill_encode_expiration_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 227] CRP MRTD: 
 --------------------------------------------------------------------------------
   153:         raise ValueError('birth_date must be exactly 6 characters')
@@ -3179,7 +3179,7 @@
   160:     doc_type_padded = document_type.ljust(2, '<')
   161:     names_field = (surname + '<<') + given_names
 --------------------------------------------------------------------------------
-[0.01417 s] killed by test_kill_encode_expiration_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01348 s] killed by test_kill_encode_expiration_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 228] CRP MRTD: 
 --------------------------------------------------------------------------------
   156:     if len(expiration_date) != 6:
@@ -3193,7 +3193,7 @@
   163:     line1 = (doc_type_padded + issuing_country) + names_field
   164:     
 --------------------------------------------------------------------------------
-[0.01175 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01242 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 229] CRP MRTD: 
 --------------------------------------------------------------------------------
   156:     if len(expiration_date) != 6:
@@ -3207,7 +3207,7 @@
   163:     line1 = (doc_type_padded + issuing_country) + names_field
   164:     
 --------------------------------------------------------------------------------
-[5.00756 s] timeout
+[5.00736 s] timeout
    - [# 230] CRP MRTD: 
 --------------------------------------------------------------------------------
   156:     if len(expiration_date) != 6:
@@ -3221,7 +3221,7 @@
   163:     line1 = (doc_type_padded + issuing_country) + names_field
   164:     
 --------------------------------------------------------------------------------
-[5.00883 s] timeout
+[5.00758 s] timeout
    - [# 231] CRP MRTD: 
 --------------------------------------------------------------------------------
   157:         raise ValueError('expiration_date must be exactly 6 characters')
@@ -3235,7 +3235,7 @@
   164:     
   165:     
 --------------------------------------------------------------------------------
-[0.01155 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01350 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 232] CRP MRTD: 
 --------------------------------------------------------------------------------
   157:         raise ValueError('expiration_date must be exactly 6 characters')
@@ -3249,7 +3249,7 @@
   164:     
   165:     
 --------------------------------------------------------------------------------
-[0.01042 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01006 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 233] CRP MRTD: 
 --------------------------------------------------------------------------------
   158:     
@@ -3263,7 +3263,7 @@
   165:     
   166:     personal_number_padded = personal_number[:14].ljust(14, '<')
 --------------------------------------------------------------------------------
-[0.01189 s] killed by test_kill_encode_long_name_truncated (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01051 s] killed by test_kill_encode_long_name_truncated (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 234] CRP MRTD: 
 --------------------------------------------------------------------------------
   158:     
@@ -3277,7 +3277,7 @@
   165:     
   166:     personal_number_padded = personal_number[:14].ljust(14, '<')
 --------------------------------------------------------------------------------
-[0.00996 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00973 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 235] CRP MRTD: 
 --------------------------------------------------------------------------------
   158:     
@@ -3291,7 +3291,7 @@
   165:     
   166:     personal_number_padded = personal_number[:14].ljust(14, '<')
 --------------------------------------------------------------------------------
-[5.00652 s] timeout
+[5.00602 s] timeout
    - [# 236] CRP MRTD: 
 --------------------------------------------------------------------------------
   158:     
@@ -3305,7 +3305,7 @@
   165:     
   166:     personal_number_padded = personal_number[:14].ljust(14, '<')
 --------------------------------------------------------------------------------
-[5.00828 s] timeout
+[5.00635 s] timeout
    - [# 237] CRP MRTD: 
 --------------------------------------------------------------------------------
   162:     names_field = names_field[:39].ljust(39, '<')
@@ -3319,7 +3319,7 @@
   169:     cd_birth = calculate_check_digit(birth_date)
   170:     cd_expiration = calculate_check_digit(expiration_date)
 --------------------------------------------------------------------------------
-[0.01517 s] killed by test_kill_encode_long_personal_number_truncated (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01233 s] killed by test_kill_encode_long_personal_number_truncated (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 238] CRP MRTD: 
 --------------------------------------------------------------------------------
   162:     names_field = names_field[:39].ljust(39, '<')
@@ -3333,7 +3333,7 @@
   169:     cd_birth = calculate_check_digit(birth_date)
   170:     cd_expiration = calculate_check_digit(expiration_date)
 --------------------------------------------------------------------------------
-[0.01407 s] killed by test_encode_no_personal_number (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01063 s] killed by test_encode_no_personal_number (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 239] CRP MRTD: 
 --------------------------------------------------------------------------------
   162:     names_field = names_field[:39].ljust(39, '<')
@@ -3347,7 +3347,7 @@
   169:     cd_birth = calculate_check_digit(birth_date)
   170:     cd_expiration = calculate_check_digit(expiration_date)
 --------------------------------------------------------------------------------
-[5.00910 s] timeout
+[5.00649 s] timeout
    - [# 240] CRP MRTD: 
 --------------------------------------------------------------------------------
   162:     names_field = names_field[:39].ljust(39, '<')
@@ -3361,7 +3361,7 @@
   169:     cd_birth = calculate_check_digit(birth_date)
   170:     cd_expiration = calculate_check_digit(expiration_date)
 --------------------------------------------------------------------------------
-[5.00850 s] timeout
+[5.00851 s] timeout
    - [# 241] CRP MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -3375,7 +3375,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01489 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01238 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 242] CRP MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -3389,7 +3389,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01424 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01075 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 243] CRP MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -3403,7 +3403,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01497 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00973 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 244] CRP MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -3417,7 +3417,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01290 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00987 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 245] CRP MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -3431,7 +3431,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01337 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01102 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 246] CRP MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -3445,7 +3445,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01412 s] survived
+[0.01075 s] survived
    - [# 247] CRP MRTD: 
 --------------------------------------------------------------------------------
   196:     per-field results. Validates ALL fields (does not stop at first mismatch).
@@ -3459,7 +3459,7 @@
   203:         ('personal_number', line2[28:42], line2[42])]
   204:     
 --------------------------------------------------------------------------------
-[0.01635 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01111 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 248] CRP MRTD: 
 --------------------------------------------------------------------------------
   196:     per-field results. Validates ALL fields (does not stop at first mismatch).
@@ -3473,7 +3473,7 @@
   203:         ('personal_number', line2[28:42], line2[42])]
   204:     
 --------------------------------------------------------------------------------
-[0.01375 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01068 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 249] CRP MRTD: 
 --------------------------------------------------------------------------------
   196:     per-field results. Validates ALL fields (does not stop at first mismatch).
@@ -3487,7 +3487,7 @@
   203:         ('personal_number', line2[28:42], line2[42])]
   204:     
 --------------------------------------------------------------------------------
-[0.01503 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
+[0.01108 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
    - [# 250] CRP MRTD: 
 --------------------------------------------------------------------------------
   196:     per-field results. Validates ALL fields (does not stop at first mismatch).
@@ -3501,7 +3501,7 @@
   203:         ('personal_number', line2[28:42], line2[42])]
   204:     
 --------------------------------------------------------------------------------
-[0.01486 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01123 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 251] CRP MRTD: 
 --------------------------------------------------------------------------------
   196:     per-field results. Validates ALL fields (does not stop at first mismatch).
@@ -3515,7 +3515,7 @@
   203:         ('personal_number', line2[28:42], line2[42])]
   204:     
 --------------------------------------------------------------------------------
-[0.01534 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01133 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 252] CRP MRTD: 
 --------------------------------------------------------------------------------
   197:     '''
@@ -3529,7 +3529,7 @@
   204:     
   205:     
 --------------------------------------------------------------------------------
-[0.01447 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01355 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 253] CRP MRTD: 
 --------------------------------------------------------------------------------
   197:     '''
@@ -3543,7 +3543,7 @@
   204:     
   205:     
 --------------------------------------------------------------------------------
-[0.01419 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01348 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 254] CRP MRTD: 
 --------------------------------------------------------------------------------
   197:     '''
@@ -3557,7 +3557,7 @@
   204:     
   205:     
 --------------------------------------------------------------------------------
-[0.01139 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01296 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 255] CRP MRTD: 
 --------------------------------------------------------------------------------
   197:     '''
@@ -3571,7 +3571,7 @@
   204:     
   205:     
 --------------------------------------------------------------------------------
-[0.01303 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01110 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 256] CRP MRTD: 
 --------------------------------------------------------------------------------
   197:     '''
@@ -3585,7 +3585,7 @@
   204:     
   205:     
 --------------------------------------------------------------------------------
-[0.01383 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01116 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 257] CRP MRTD: 
 --------------------------------------------------------------------------------
   198:     
@@ -3599,7 +3599,7 @@
   205:     
   206:     fields = []
 --------------------------------------------------------------------------------
-[0.01422 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01065 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 258] CRP MRTD: 
 --------------------------------------------------------------------------------
   198:     
@@ -3613,7 +3613,7 @@
   205:     
   206:     fields = []
 --------------------------------------------------------------------------------
-[0.01461 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01207 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 259] CRP MRTD: 
 --------------------------------------------------------------------------------
   198:     
@@ -3627,7 +3627,7 @@
   205:     
   206:     fields = []
 --------------------------------------------------------------------------------
-[0.01365 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01151 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 260] CRP MRTD: 
 --------------------------------------------------------------------------------
   198:     
@@ -3641,7 +3641,7 @@
   205:     
   206:     fields = []
 --------------------------------------------------------------------------------
-[0.01449 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01288 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 261] CRP MRTD: 
 --------------------------------------------------------------------------------
   198:     
@@ -3655,7 +3655,7 @@
   205:     
   206:     fields = []
 --------------------------------------------------------------------------------
-[0.01285 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01045 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 262] CRP MRTD: 
 --------------------------------------------------------------------------------
   199:     checks = [\
@@ -3669,7 +3669,7 @@
   206:     fields = []
   207:     all_match = True
 --------------------------------------------------------------------------------
-[0.01515 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01071 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 263] CRP MRTD: 
 --------------------------------------------------------------------------------
   199:     checks = [\
@@ -3683,7 +3683,7 @@
   206:     fields = []
   207:     all_match = True
 --------------------------------------------------------------------------------
-[0.01517 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01098 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 264] CRP MRTD: 
 --------------------------------------------------------------------------------
   199:     checks = [\
@@ -3697,7 +3697,7 @@
   206:     fields = []
   207:     all_match = True
 --------------------------------------------------------------------------------
-[0.01478 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
+[0.01010 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
    - [# 265] CRP MRTD: 
 --------------------------------------------------------------------------------
   199:     checks = [\
@@ -3711,7 +3711,7 @@
   206:     fields = []
   207:     all_match = True
 --------------------------------------------------------------------------------
-[0.01302 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
+[0.01022 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
    - [# 266] CRP MRTD: 
 --------------------------------------------------------------------------------
   199:     checks = [\
@@ -3725,7 +3725,7 @@
   206:     fields = []
   207:     all_match = True
 --------------------------------------------------------------------------------
-[0.01325 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01009 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 267] CRP MRTD: 
 --------------------------------------------------------------------------------
   211:         match = expected == stored_digit
@@ -3739,7 +3739,7 @@
   218:             'match': match})
   219:     
 --------------------------------------------------------------------------------
-[0.01353 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01061 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 268] CRP MRTD: 
 --------------------------------------------------------------------------------
   211:         match = expected == stored_digit
@@ -3753,7 +3753,7 @@
   218:             'match': match})
   219:     
 --------------------------------------------------------------------------------
-[0.01334 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01382 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 269] CRP MRTD: 
 --------------------------------------------------------------------------------
   212:         if not match:
@@ -3767,7 +3767,7 @@
   219:     
   220:     
 --------------------------------------------------------------------------------
-[0.01292 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01251 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 270] CRP MRTD: 
 --------------------------------------------------------------------------------
   212:         if not match:
@@ -3781,7 +3781,7 @@
   219:     
   220:     
 --------------------------------------------------------------------------------
-[0.01222 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01278 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 271] CRP MRTD: 
 --------------------------------------------------------------------------------
   213:             all_match = False
@@ -3795,7 +3795,7 @@
   220:     
   221:     
 --------------------------------------------------------------------------------
-[0.01276 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01193 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 272] CRP MRTD: 
 --------------------------------------------------------------------------------
   213:             all_match = False
@@ -3809,7 +3809,7 @@
   220:     
   221:     
 --------------------------------------------------------------------------------
-[0.01290 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01157 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 273] CRP MRTD: 
 --------------------------------------------------------------------------------
   214:         fields.append({\
@@ -3823,7 +3823,7 @@
   221:     
   222:     overall_data = (line2[0:10] + line2[13:20]) + line2[21:43]
 --------------------------------------------------------------------------------
-[0.01315 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01216 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 274] CRP MRTD: 
 --------------------------------------------------------------------------------
   214:         fields.append({\
@@ -3837,7 +3837,7 @@
   221:     
   222:     overall_data = (line2[0:10] + line2[13:20]) + line2[21:43]
 --------------------------------------------------------------------------------
-[0.01373 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01221 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 275] CRP MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -3851,7 +3851,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01347 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
+[0.01062 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
    - [# 276] CRP MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -3865,7 +3865,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01348 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
+[0.01018 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
    - [# 277] CRP MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -3879,7 +3879,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01302 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01020 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 278] CRP MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -3893,7 +3893,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01399 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01018 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 279] CRP MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -3907,7 +3907,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01429 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01051 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 280] CRP MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -3921,7 +3921,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01430 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.00951 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 281] CRP MRTD: 
 --------------------------------------------------------------------------------
   220:     
@@ -3935,7 +3935,7 @@
   227:         all_match = False
   228:     fields.append({\
 --------------------------------------------------------------------------------
-[0.01370 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01026 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 282] CRP MRTD: 
 --------------------------------------------------------------------------------
   225:     overall_match = overall_expected == overall_stored
@@ -3949,7 +3949,7 @@
   232:         'match': overall_match})
   233:     
 --------------------------------------------------------------------------------
-[0.01292 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.00960 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 283] CRP MRTD: 
 --------------------------------------------------------------------------------
   225:     overall_match = overall_expected == overall_stored
@@ -3963,7 +3963,7 @@
   232:         'match': overall_match})
   233:     
 --------------------------------------------------------------------------------
-[0.01211 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01017 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 284] CRP MRTD: 
 --------------------------------------------------------------------------------
   226:     if not overall_match:
@@ -3977,7 +3977,7 @@
   233:     
   234:     
 --------------------------------------------------------------------------------
-[0.01336 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01071 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 285] CRP MRTD: 
 --------------------------------------------------------------------------------
   226:     if not overall_match:
@@ -3991,7 +3991,7 @@
   233:     
   234:     
 --------------------------------------------------------------------------------
-[0.01273 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01009 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 286] CRP MRTD: 
 --------------------------------------------------------------------------------
   227:         all_match = False
@@ -4005,7 +4005,7 @@
   234:     
   235:     return {\
 --------------------------------------------------------------------------------
-[0.01373 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01031 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 287] CRP MRTD: 
 --------------------------------------------------------------------------------
   227:         all_match = False
@@ -4019,7 +4019,7 @@
   234:     
   235:     return {\
 --------------------------------------------------------------------------------
-[0.01298 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01039 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 288] CRP MRTD: 
 --------------------------------------------------------------------------------
   228:     fields.append({\
@@ -4033,7 +4033,7 @@
   235:     return {\
   236:         'overall_result': all_match, \
 --------------------------------------------------------------------------------
-[0.01246 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01055 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 289] CRP MRTD: 
 --------------------------------------------------------------------------------
   228:     fields.append({\
@@ -4047,7 +4047,7 @@
   235:     return {\
   236:         'overall_result': all_match, \
 --------------------------------------------------------------------------------
-[0.01375 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01165 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 290] CRP MRTD: 
 --------------------------------------------------------------------------------
   225:     overall_match = overall_expected == overall_stored
@@ -4061,7 +4061,7 @@
   232:         'match': overall_match})
   233:     
 --------------------------------------------------------------------------------
-[0.01453 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01480 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 291] CRP MRTD: 
 --------------------------------------------------------------------------------
   225:     overall_match = overall_expected == overall_stored
@@ -4075,7 +4075,7 @@
   232:         'match': overall_match})
   233:     
 --------------------------------------------------------------------------------
-[0.01359 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
+[0.01275 s] killed by test_validate_returns_all_fields (tests.test_validate_mrz.TestValidateMRZ)
    - [# 292] CRP MRTD: 
 --------------------------------------------------------------------------------
   232:         'match': overall_match})
@@ -4086,7 +4086,7 @@
 + 236:         'mutpy': all_match, \
   237:         'fields': fields}
 --------------------------------------------------------------------------------
-[0.01332 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01290 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 293] CRP MRTD: 
 --------------------------------------------------------------------------------
   232:         'match': overall_match})
@@ -4097,7 +4097,7 @@
 + 236:         '': all_match, \
   237:         'fields': fields}
 --------------------------------------------------------------------------------
-[0.01419 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01363 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 294] CRP MRTD: 
 --------------------------------------------------------------------------------
   233:     
@@ -4107,7 +4107,7 @@
 - 237:         'fields': fields}
 + 237:         'mutpy': fields}
 --------------------------------------------------------------------------------
-[0.01347 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01134 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 295] CRP MRTD: 
 --------------------------------------------------------------------------------
   233:     
@@ -4117,7 +4117,7 @@
 - 237:         'fields': fields}
 + 237:         '': fields}
 --------------------------------------------------------------------------------
-[0.01349 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01081 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 296] LCR MRTD: 
 --------------------------------------------------------------------------------
    11:     Digits 0-9 -> 0-9, letters A-Z -> 10-35, '<' -> 0.
@@ -4131,7 +4131,7 @@
    18:         return 0
    19:     else:
 --------------------------------------------------------------------------------
-[0.01374 s] killed by test_kill_lowercase_rejected_by_char_to_value (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01185 s] killed by test_kill_lowercase_rejected_by_char_to_value (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 297] LCR MRTD: 
 --------------------------------------------------------------------------------
   124:     Raises ValueError if required fields are missing or fixed-length fields are wrong.
@@ -4145,7 +4145,7 @@
   131:     
   132:     document_type = fields['document_type'].upper()
 --------------------------------------------------------------------------------
-[0.01405 s] killed by test_encode_missing_birth_date (tests.test_encode_mrz.TestEncodeMRZ)
+[0.00999 s] killed by test_encode_missing_birth_date (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 298] LCR MRTD: 
 --------------------------------------------------------------------------------
   140:     expiration_date = fields['expiration_date']
@@ -4159,7 +4159,7 @@
   147:         raise ValueError('issuing_country must be exactly 3 characters')
   148:     if len(passport_number) != 9:
 --------------------------------------------------------------------------------
-[0.01494 s] killed by test_kill_encode_doctype_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01079 s] killed by test_kill_encode_doctype_error_message (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 299] LOR MRTD: 
 --------------------------------------------------------------------------------
    33:     for c in data:
@@ -4173,7 +4173,7 @@
    40: 
    41: def scan_mrz():
 --------------------------------------------------------------------------------
-[0.01217 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00855 s] killed by test_mixed_alphanumeric (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [# 300] LOR MRTD: 
 --------------------------------------------------------------------------------
    33:     for c in data:
@@ -4187,7 +4187,7 @@
    40: 
    41: def scan_mrz():
 --------------------------------------------------------------------------------
-[0.01264 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00878 s] killed by test_birth_date_reference (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [# 301] ROR MRTD: 
 --------------------------------------------------------------------------------
    13:     if c.isdigit():
@@ -4201,7 +4201,7 @@
    20:         raise ValueError(f'Invalid MRZ character: {c}')
    21: 
 --------------------------------------------------------------------------------
-[0.01085 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
+[0.00910 s] killed by test_all_fillers (tests.test_calculate_check_digit.TestCalculateCheckDigit)
    - [# 302] ROR MRTD: 
 --------------------------------------------------------------------------------
    57:     Validates input length and character set. Raises ValueError on invalid input.
@@ -4215,7 +4215,7 @@
    64:         
    65:         if not (_MRZ_PATTERN.match(line)):
 --------------------------------------------------------------------------------
-[0.01241 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00963 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 303] ROR MRTD: 
 --------------------------------------------------------------------------------
    74:     
@@ -4229,7 +4229,7 @@
    81:     passport_number = line2[0:9].rstrip('<')
    82:     check_digit_passport = line2[9]
 --------------------------------------------------------------------------------
-[0.01363 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01015 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 304] ROR MRTD: 
 --------------------------------------------------------------------------------
    74:     
@@ -4243,7 +4243,7 @@
    81:     passport_number = line2[0:9].rstrip('<')
    82:     check_digit_passport = line2[9]
 --------------------------------------------------------------------------------
-[0.01396 s] survived
+[0.01428 s] survived
    - [# 305] ROR MRTD: 
 --------------------------------------------------------------------------------
   140:     expiration_date = fields['expiration_date']
@@ -4257,7 +4257,7 @@
   147:         raise ValueError('issuing_country must be exactly 3 characters')
   148:     if len(passport_number) != 9:
 --------------------------------------------------------------------------------
-[0.01438 s] killed by test_kill_encode_two_char_doctype_accepted (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01461 s] killed by test_kill_encode_two_char_doctype_accepted (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 306] ROR MRTD: 
 --------------------------------------------------------------------------------
   140:     expiration_date = fields['expiration_date']
@@ -4271,7 +4271,7 @@
   147:         raise ValueError('issuing_country must be exactly 3 characters')
   148:     if len(passport_number) != 9:
 --------------------------------------------------------------------------------
-[0.01156 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01313 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 307] ROR MRTD: 
 --------------------------------------------------------------------------------
   140:     expiration_date = fields['expiration_date']
@@ -4285,7 +4285,7 @@
   147:         raise ValueError('issuing_country must be exactly 3 characters')
   148:     if len(passport_number) != 9:
 --------------------------------------------------------------------------------
-[0.01164 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01238 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 308] ROR MRTD: 
 --------------------------------------------------------------------------------
   140:     expiration_date = fields['expiration_date']
@@ -4299,7 +4299,7 @@
   147:         raise ValueError('issuing_country must be exactly 3 characters')
   148:     if len(passport_number) != 9:
 --------------------------------------------------------------------------------
-[0.01447 s] killed by test_kill_encode_two_char_doctype_accepted (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01558 s] killed by test_kill_encode_two_char_doctype_accepted (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 309] ROR MRTD: 
 --------------------------------------------------------------------------------
   142:     
@@ -4313,7 +4313,7 @@
   149:         raise ValueError('passport_number must be exactly 9 characters')
   150:     if len(country_code) != 3:
 --------------------------------------------------------------------------------
-[0.01307 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01206 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 310] ROR MRTD: 
 --------------------------------------------------------------------------------
   144:     if (len(document_type) < 1 or len(document_type) > 2):
@@ -4327,7 +4327,7 @@
   151:         raise ValueError('country_code must be exactly 3 characters')
   152:     if len(birth_date) != 6:
 --------------------------------------------------------------------------------
-[0.01317 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01237 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 311] ROR MRTD: 
 --------------------------------------------------------------------------------
   146:     if len(issuing_country) != 3:
@@ -4341,7 +4341,7 @@
   153:         raise ValueError('birth_date must be exactly 6 characters')
   154:     if len(sex) != 1:
 --------------------------------------------------------------------------------
-[0.01440 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01224 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 312] ROR MRTD: 
 --------------------------------------------------------------------------------
   148:     if len(passport_number) != 9:
@@ -4355,7 +4355,7 @@
   155:         raise ValueError('sex must be exactly 1 character')
   156:     if len(expiration_date) != 6:
 --------------------------------------------------------------------------------
-[0.01263 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01266 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 313] ROR MRTD: 
 --------------------------------------------------------------------------------
   150:     if len(country_code) != 3:
@@ -4369,7 +4369,7 @@
   157:         raise ValueError('expiration_date must be exactly 6 characters')
   158:     
 --------------------------------------------------------------------------------
-[0.01429 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01275 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 314] ROR MRTD: 
 --------------------------------------------------------------------------------
   152:     if len(birth_date) != 6:
@@ -4383,7 +4383,7 @@
   159:     
   160:     doc_type_padded = document_type.ljust(2, '<')
 --------------------------------------------------------------------------------
-[0.01355 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01111 s] killed by test_encode_fra_passport (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 315] ROR MRTD: 
 --------------------------------------------------------------------------------
   207:     all_match = True
@@ -4397,7 +4397,7 @@
   214:         fields.append({\
   215:             'field_name': field_name, \
 --------------------------------------------------------------------------------
-[0.01449 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01157 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 316] ROR MRTD: 
 --------------------------------------------------------------------------------
   221:     
@@ -4411,7 +4411,7 @@
   228:     fields.append({\
   229:         'field_name': 'overall', \
 --------------------------------------------------------------------------------
-[0.01445 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01054 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 317] SIR MRTD: 
 --------------------------------------------------------------------------------
    67:                 f'{name} contains invalid characters (only A-Z, 0-9, \'<\' allowed)')
@@ -4425,7 +4425,7 @@
    74:     
    75:     names_raw = line1[5:44]
 --------------------------------------------------------------------------------
-[0.01402 s] survived
+[0.01191 s] survived
    - [# 318] SIR MRTD: 
 --------------------------------------------------------------------------------
    67:                 f'{name} contains invalid characters (only A-Z, 0-9, \'<\' allowed)')
@@ -4439,7 +4439,7 @@
    74:     
    75:     names_raw = line1[5:44]
 --------------------------------------------------------------------------------
-[0.01286 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01046 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 319] SIR MRTD: 
 --------------------------------------------------------------------------------
    68:     
@@ -4453,7 +4453,7 @@
    75:     names_raw = line1[5:44]
    76:     parts = names_raw.split('<<')
 --------------------------------------------------------------------------------
-[0.01285 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01103 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 320] SIR MRTD: 
 --------------------------------------------------------------------------------
    68:     
@@ -4467,7 +4467,7 @@
    75:     names_raw = line1[5:44]
    76:     parts = names_raw.split('<<')
 --------------------------------------------------------------------------------
-[0.01288 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00990 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 321] SIR MRTD: 
 --------------------------------------------------------------------------------
    71:     document_type = line1[0:2].rstrip('<')
@@ -4481,7 +4481,7 @@
    78:     given_names = parts[1].replace('<', ' ').strip() if len(parts) > 1 else ''
    79:     
 --------------------------------------------------------------------------------
-[0.01445 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00998 s] killed by test_decode_deu_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 322] SIR MRTD: 
 --------------------------------------------------------------------------------
    71:     document_type = line1[0:2].rstrip('<')
@@ -4495,7 +4495,7 @@
    78:     given_names = parts[1].replace('<', ' ').strip() if len(parts) > 1 else ''
    79:     
 --------------------------------------------------------------------------------
-[0.01540 s] survived
+[0.01079 s] survived
    - [# 323] SIR MRTD: 
 --------------------------------------------------------------------------------
    77:     surname = parts[0].replace('<', ' ').strip()
@@ -4509,7 +4509,7 @@
    84:     birth_date = line2[13:19]
    85:     check_digit_birth = line2[19]
 --------------------------------------------------------------------------------
-[0.01439 s] survived
+[0.01085 s] survived
    - [# 324] SIR MRTD: 
 --------------------------------------------------------------------------------
    77:     surname = parts[0].replace('<', ' ').strip()
@@ -4523,7 +4523,7 @@
    84:     birth_date = line2[13:19]
    85:     check_digit_birth = line2[19]
 --------------------------------------------------------------------------------
-[0.01239 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00963 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 325] SIR MRTD: 
 --------------------------------------------------------------------------------
    79:     
@@ -4537,7 +4537,7 @@
    86:     sex = line2[20]
    87:     expiration_date = line2[21:27]
 --------------------------------------------------------------------------------
-[0.01222 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01036 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 326] SIR MRTD: 
 --------------------------------------------------------------------------------
    79:     
@@ -4551,7 +4551,7 @@
    86:     sex = line2[20]
    87:     expiration_date = line2[21:27]
 --------------------------------------------------------------------------------
-[0.01344 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00989 s] killed by test_decode_gbr_passport (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 327] SIR MRTD: 
 --------------------------------------------------------------------------------
    80:     
@@ -4565,7 +4565,7 @@
    87:     expiration_date = line2[21:27]
    88:     check_digit_expiration = line2[27]
 --------------------------------------------------------------------------------
-[0.01451 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00962 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 328] SIR MRTD: 
 --------------------------------------------------------------------------------
    80:     
@@ -4579,7 +4579,7 @@
    87:     expiration_date = line2[21:27]
    88:     check_digit_expiration = line2[27]
 --------------------------------------------------------------------------------
-[0.01273 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00989 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 329] SIR MRTD: 
 --------------------------------------------------------------------------------
    83:     country_code = line2[10:13].rstrip('<')
@@ -4593,7 +4593,7 @@
    90:     check_digit_personal = line2[42]
    91:     overall_check_digit = line2[43]
 --------------------------------------------------------------------------------
-[0.01411 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00977 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 330] SIR MRTD: 
 --------------------------------------------------------------------------------
    83:     country_code = line2[10:13].rstrip('<')
@@ -4607,7 +4607,7 @@
    90:     check_digit_personal = line2[42]
    91:     overall_check_digit = line2[43]
 --------------------------------------------------------------------------------
-[0.01497 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00927 s] killed by test_decode_reference_uto (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 331] SIR MRTD: 
 --------------------------------------------------------------------------------
    85:     check_digit_birth = line2[19]
@@ -4621,7 +4621,7 @@
    92:     
    93:     return {\
 --------------------------------------------------------------------------------
-[0.01191 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
+[0.00981 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 332] SIR MRTD: 
 --------------------------------------------------------------------------------
    85:     check_digit_birth = line2[19]
@@ -4635,7 +4635,7 @@
    92:     
    93:     return {\
 --------------------------------------------------------------------------------
-[0.01210 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
+[0.01024 s] killed by test_decode_empty_personal_number (tests.test_decode_mrz.TestDecodeMRZ)
    - [# 333] SIR MRTD: 
 --------------------------------------------------------------------------------
   158:     
@@ -4649,7 +4649,7 @@
   165:     
   166:     personal_number_padded = personal_number[:14].ljust(14, '<')
 --------------------------------------------------------------------------------
-[0.01332 s] killed by test_kill_encode_long_name_truncated (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01054 s] killed by test_kill_encode_long_name_truncated (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 334] SIR MRTD: 
 --------------------------------------------------------------------------------
   162:     names_field = names_field[:39].ljust(39, '<')
@@ -4663,7 +4663,7 @@
   169:     cd_birth = calculate_check_digit(birth_date)
   170:     cd_expiration = calculate_check_digit(expiration_date)
 --------------------------------------------------------------------------------
-[0.01328 s] killed by test_kill_encode_long_personal_number_truncated (tests.test_mutpy_additional.TestMutPyAdditional)
+[0.01124 s] killed by test_kill_encode_long_personal_number_truncated (tests.test_mutpy_additional.TestMutPyAdditional)
    - [# 335] SIR MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -4677,7 +4677,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01348 s] survived
+[0.01112 s] survived
    - [# 336] SIR MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -4691,7 +4691,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01351 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01033 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 337] SIR MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -4705,7 +4705,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01329 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01175 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 338] SIR MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -4719,7 +4719,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01448 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01156 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 339] SIR MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -4733,7 +4733,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01298 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
+[0.01171 s] killed by test_encode_reference_uto (tests.test_encode_mrz.TestEncodeMRZ)
    - [# 340] SIR MRTD: 
 --------------------------------------------------------------------------------
   179:     
@@ -4747,7 +4747,7 @@
   186:     line2 = line2_partial + str(cd_overall)
   187:     
 --------------------------------------------------------------------------------
-[0.01376 s] survived
+[0.01161 s] survived
    - [# 341] SIR MRTD: 
 --------------------------------------------------------------------------------
   196:     per-field results. Validates ALL fields (does not stop at first mismatch).
@@ -4761,7 +4761,7 @@
   203:         ('personal_number', line2[28:42], line2[42])]
   204:     
 --------------------------------------------------------------------------------
-[0.01415 s] survived
+[0.01076 s] survived
    - [# 342] SIR MRTD: 
 --------------------------------------------------------------------------------
   196:     per-field results. Validates ALL fields (does not stop at first mismatch).
@@ -4775,7 +4775,7 @@
   203:         ('personal_number', line2[28:42], line2[42])]
   204:     
 --------------------------------------------------------------------------------
-[0.01336 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01119 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 343] SIR MRTD: 
 --------------------------------------------------------------------------------
   197:     '''
@@ -4789,7 +4789,7 @@
   204:     
   205:     
 --------------------------------------------------------------------------------
-[0.01328 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01038 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 344] SIR MRTD: 
 --------------------------------------------------------------------------------
   197:     '''
@@ -4803,7 +4803,7 @@
   204:     
   205:     
 --------------------------------------------------------------------------------
-[0.01368 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
+[0.00999 s] killed by test_validate_all_correct_uto (tests.test_validate_mrz.TestValidateMRZ)
    - [# 345] SIR MRTD: 
 --------------------------------------------------------------------------------
   198:     
@@ -4817,7 +4817,7 @@
   205:     
   206:     fields = []
 --------------------------------------------------------------------------------
-[0.01581 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01078 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 346] SIR MRTD: 
 --------------------------------------------------------------------------------
   198:     
@@ -4831,7 +4831,7 @@
   205:     
   206:     fields = []
 --------------------------------------------------------------------------------
-[0.01289 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01081 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 347] SIR MRTD: 
 --------------------------------------------------------------------------------
   199:     checks = [\
@@ -4845,7 +4845,7 @@
   206:     fields = []
   207:     all_match = True
 --------------------------------------------------------------------------------
-[0.01325 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01035 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 348] SIR MRTD: 
 --------------------------------------------------------------------------------
   199:     checks = [\
@@ -4859,7 +4859,7 @@
   206:     fields = []
   207:     all_match = True
 --------------------------------------------------------------------------------
-[0.01379 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01143 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 349] SIR MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -4873,7 +4873,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01279 s] survived
+[0.01158 s] survived
    - [# 350] SIR MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -4887,7 +4887,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01285 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01056 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 351] SIR MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -4901,7 +4901,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01366 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01030 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 352] SIR MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -4915,7 +4915,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01537 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01225 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 353] SIR MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -4929,7 +4929,7 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01342 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[0.01099 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
    - [# 354] SIR MRTD: 
 --------------------------------------------------------------------------------
   218:             'match': match})
@@ -4943,10 +4943,10 @@
   225:     overall_match = overall_expected == overall_stored
   226:     if not overall_match:
 --------------------------------------------------------------------------------
-[0.01405 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
-[*] Mutation score [160.39297 s]: 95.2%
+[0.01018 s] killed by test_validate_all_correct_usa (tests.test_validate_mrz.TestValidateMRZ)
+[*] Mutation score [158.63014 s]: 96.6%
    - all: 354
-   - killed: 311 (87.9%)
-   - survived: 17 (4.8%)
+   - killed: 316 (89.3%)
+   - survived: 12 (3.4%)
    - incompetent: 0 (0.0%)
    - timeout: 26 (7.3%)
