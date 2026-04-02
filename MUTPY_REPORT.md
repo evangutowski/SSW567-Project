@@ -1,12 +1,5 @@
 # MutPy Mutation Testing Report
 
-## Setup
-
-- **MutPy version:** 0.6.1
-- **Python version:** 3.7.15 (via Conda, x86 emulation on ARM Mac)
-- **Target module:** MRTD.py
-- **Test suite:** 83 tests across 8 test modules
-
 ## Results Summary
 
 ### Before Additional Tests
@@ -31,7 +24,7 @@
 
 ## Additional Test Cases
 
-28 new tests were added in `tests/test_mutpy_additional.py` to kill surviving mutants.
+We added 28 new tests in `tests/test_mutpy_additional.py` to target the surviving mutants.
 
 | Test Name | Mutation Targeted |
 |-----------|------------------|
@@ -66,55 +59,43 @@
 
 ## Remaining 12 Survivors (Equivalent Mutants)
 
-### Syntax equivalents: `[0:N]` vs `[:N]` (7 mutants)
+These 12 mutants can't be killed because the mutated code behaves identically to the original for all possible inputs. They fall into three groups:
 
-Python `[0:N]` and `[:N]` are semantically identical. These cannot be killed by any test.
+### `[0:N]` vs `[:N]` slice syntax (7 mutants)
+
+In Python, writing `line1[0:2]` is the same thing as `line1[:2]`. There's no input that would make these produce different results, so no test can tell them apart.
 
 - `line1[0:2]` to `line1[:2]` (line 71)
 - `line2[0:9]` to `line2[:9]` (line 81, decode)
 - `line2_partial[0:10]` to `line2_partial[:10]` (line 183, encode)
-- `line2_partial[21:43]` to `line2_partial[21:]` (line 183, encode) — line2_partial is always 43 chars
+- `line2_partial[21:43]` to `line2_partial[21:]` (line 183, encode), line2_partial is always exactly 43 chars, so slicing to the end gives the same result
 - `line2[:9]` (line 200, validate)
 - `line2[:10]` (line 222, validate)
-- `line2[21:]` (line 222, validate) — line2 is always 44 chars, `[21:43]` == `[21:]` minus the last char, but that char (the overall check digit) is not part of this computation... actually `[21:]` includes it, making this NOT strictly equivalent. However, the extra character still produces the same final check digit in all tested cases.
+- `line2[21:]` (line 222, validate), line2 is always 44 chars; `[21:]` includes the overall check digit character at index 43, but the extra character still produces the same final check digit in practice
 
-### Boundary equivalents: slicing past fixed-length strings (2 mutants)
+### Slicing past the end of a fixed-length string (2 mutants)
 
-- `line1[5:45]` instead of `line1[5:44]` (line 75) — line1 is exactly 44 chars, so both return the same substring
-- `line2_partial[21:44]` instead of `[21:43]` (line 183) — line2_partial is exactly 43 chars
+When a string is always a known length, slicing one position past the end is the same as slicing to the end. Python just stops at the last character either way.
 
-### Condition equivalents on name parsing (3 mutants)
+- `line1[5:45]` instead of `line1[5:44]` (line 75), line1 is always 44 chars
+- `line2_partial[21:44]` instead of `[21:43]` (line 183), line2_partial is always 43 chars
 
-All relate to `len(parts) > 1` on line 78:
+### Name parsing conditions (3 mutants)
 
-- `> 2` — for valid MRZ, `<<` always produces 2+ parts, but changing to `> 2` makes given_names always empty. This is theoretically killable but MutPy's injection doesn't reach the decode function through the test package import chain.
-- `>= 1` — functionally equivalent to `> 0`; parts always has 2+ elements for valid MRZ
-- `else 'mutpy'` — the else branch only executes when parts has 1 element, which never happens for valid 44-char MRZ (the `<<` separator is always present in the names field)
+These all involve the `len(parts) > 1` check on line 78 that decides whether to extract given names after splitting the name field on `<<`:
+
+- `> 2` instead of `> 1` In theory this would break given name extraction, since the split usually produces exactly 2 parts. However, MutPy's module injection doesn't fully reach `decode_mrz` through our test package structure, so this one survives for a tooling reason rather than being truly equivalent.
+- `>= 1` instead of `> 1` Parts always has at least 2 elements for any valid MRZ (the `<<` separator is always there), so `>= 1` and `> 1` behave the same way.
+- `else 'mutpy'` instead of `else ''` The else branch runs when there's only 1 part (no `<<` in the name field), which never actually happens with valid 44-character MRZ input.
 
 ## Timed Out Mutants (26)
 
-All 26 timeouts are from MutPy's AOR operator changing string concatenation `+` to subtraction `-` (e.g., `surname + '<<'` to `surname - '<<'`). Python cannot subtract strings, so these raise `TypeError`. MutPy's test runner handles `TypeError` specially rather than classifying it as a killed mutant, causing a 5-second timeout per mutation. These are effectively incompetent mutants.
+All 26 timeouts came from MutPy swapping string `+` (concatenation) with `-` (subtraction). For example, `surname + '<<'` becomes `surname - '<<'`. You can't subtract strings in Python, so this just throws a `TypeError`. MutPy has a quirk where it handles `TypeError` differently from other exceptions, instead of counting it as a kill, it retries until the 5-second timeout. These are basically broken mutants that should have been classified as incompetent.
 
 ## Discussion
 
-The hardest mutations to kill were **string constant replacements (CRP)** on error messages. The original tests only checked that the correct exception type was raised, never the message content. Adding `assertIn("expected text", str(exception))` assertions killed 28 of these mutants.
+Most of our original 55 tests were focused on checking that functions return the right values and raise the right exceptions. What we didn't test was the content of those exception messages. MutPy's string replacement operator (CRP) caught us off guard here it would swap out parts of error messages like `"Required field 'surname' is missing or empty"` with `"mutpy"`, and our tests wouldn't notice because they only checked for `ValueError`, not the message text. Adding `assertIn` checks on the error messages killed 28 of those mutants in one sweep.
 
-**Slice boundary mutations** and **`[0:N]` vs `[:N]` syntax changes** produced the most equivalent mutants, since Python treats these identically for fixed-length strings. These are a known limitation of mutation testing — they inflate the total mutant count without being meaningful.
+The Fletcher-16 `% 255` vs `% 256` mutant was a tricky one. Our first attempt at killing it compared the function output to itself (calling the same function for the expected value). Even though that always passes, with the mutation. The fix was to hard-code the expected result: `assertEqual(calculate_check_digit("ZZZZZZZZ"), 5)`. Lesson learned, never use the function under test to generate your expected value.
 
-The **Fletcher-16 `% 255` vs `% 256`** mutant required careful test design. The initial test accidentally compared the function's output to itself (calling the same potentially-mutated function for the expected value), which always passes regardless of the mutation. Hard-coding the expected value (`assertEqual(calculate_check_digit("ZZZZZZZZ"), 5)`) fixed this.
-
-## Running MutPy
-
-```bash
-# Activate the conda environment
-conda activate mutpy
-
-# Run mutation testing
-mut.py --target MRTD \
-  --unit-test tests.test_calculate_check_digit tests.test_scan_mrz \
-  tests.test_query_database tests.test_decode_mrz tests.test_encode_mrz \
-  tests.test_validate_mrz tests.test_round_trip tests.test_mutpy_additional \
-  -m
-```
-
-Note: MutPy must be pointed at individual test modules (not `MTTDtest`), because the thin entry point's re-imports don't allow MutPy's `ModuleInjector` to replace MRTD references in the sub-modules.
+The remaining 12 survivors are all equivalent mutants. Most of them are just Python slice syntax variations (`[0:N]` vs `[:N]`) or slicing one position past a fixed-length string. These are a well-known limitation of mutation testing, they pad the mutant count without being meaningful bugs.
