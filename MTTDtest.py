@@ -11,6 +11,7 @@ from tests.test_decode_mrz import TestDecodeMRZ
 from tests.test_encode_mrz import TestEncodeMRZ
 from tests.test_validate_mrz import TestValidateMRZ
 from tests.test_round_trip import TestRoundTrip
+from tests.test_mutpy_additional import TestMutPyAdditional
 
 if __name__ == "__main__":
     unittest.main()
